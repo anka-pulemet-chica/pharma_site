@@ -1,0 +1,52 @@
+{
+  "company": "公司",
+  "advantages": "優點",
+  "history": "歷史",
+  "aboutus": "關於我們",
+  "partners": "對於合作夥伴",
+  "clients": "為客戶",
+  "vacancies": "職位空缺",
+  "contacts": "聯絡方式",
+
+
+  "home-link": "了解更多",
+  "downloadPDF": "下載 PDF",
+  "contactUs": "聯絡我們",
+  
+
+  "home-about-tag": "關於公司",
+
+  "home-mission-tag": "任務",
+  "home-ethics-tag": "道德",
+  "home-politics-tag": "政治",
+  "home-politics-title": "反貪腐政策",
+
+  "home-docs-tag": "文檔",
+
+  "vacancies-contacts-dep": "人力資源聯絡人",
+  "vacancies-position": "未平倉頭寸",
+
+  "vacancies-resp": "主要職責",
+  "vacancies-req": "要求",
+  "vacancies-offer": "我們提供",
+  "vacancies-how-to": "如何申請",
+  "vacancies-join": "加入我們，成為我們團隊的一員！點擊下面的按鈕以了解有關職位空缺的更多信息並提交您的簡歷：",
+  "vacancies-link": "更多詳情請瀏覽 hh.ru",
+
+
+  "partners-heading":"與領先公司的合作協議",
+  "partners-result": "殘留物",
+
+  "clients-heading":"客戶",
+  "clients-tag": "您想成為客戶嗎？",
+
+  "contacts-office": "辦公室",
+  "contacts-tel": "電話/傳真",
+  "聯絡人-電子郵件": "電子郵件",
+  "contacts-text-us": "寫信給我們",
+
+  "form-name": "名稱",
+  "form-phone": "電話",
+  "form-email": "電子郵件",
+  "form-message": "您對什麼服務/產品有興趣"
+}

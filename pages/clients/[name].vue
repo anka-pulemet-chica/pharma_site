@@ -1,0 +1,3 @@
+<template>
+    EXAMPLE COMPANY
+</template>

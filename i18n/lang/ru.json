@@ -1,0 +1,53 @@
+{
+  "company": "Компания",
+  "advantages": "Преимущества",
+  "history": "История",
+  "aboutus": "О нас",
+  "partners": "Партнерам",
+  "clients": "Клиентам",
+  "vacancies": "Вакансии",
+  "contacts": "Контакты",
+
+  "home-link": "Узнать больше",
+  "downloadPDF": "Cкачать PDF",
+  "contactUs": "Cвязаться с нами",
+  
+
+  "home-about-tag": "О компании",
+
+  "home-mission-tag": "Миссия",
+  "home-ethics-tag": "Этика",
+  "home-politics-tag": "Политика",
+  "home-politics-title": "Антикоррупционная политика",
+
+  "home-docs-tag": "Документы",
+  
+
+
+  "vacancies-contacts-dep": "Контакты отдела кадров",
+  "vacancies-position": "Открытые позиции",
+
+  "vacancies-resp": "Основные обязанности",
+  "vacancies-req": "Требования",
+  "vacancies-offer": "Мы предлагаем",
+  "vacancies-how-to": "Как подать заявку",
+  "vacancies-join": "Присоединяйтесь к нам и станьте частью нашей команды! Нажмите на кнопку ниже, чтобы узнать больше о вакансии и подать резюме:",
+  "vacancies-link": "подробнее на hh.ru",
+
+
+  "partners-heading":"Партнерские соглашения с ведущими компаниями",
+  "partners-result": "Результат",
+
+  "clients-heading":"Клиенты",
+  "clients-tag": "Хотите стать клиентом?",
+
+  "contacts-office": "Офис",
+  "contacts-tel": "Тел./факс",
+  "contacts-email": "Email",
+  "contacts-text-us": "Написать нам",
+
+  "form-name": "Имя",
+  "form-phone": "Телефон",
+  "form-email": "Email",
+  "form-message": "Какая услуга/товар интересует"
+}

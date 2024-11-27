@@ -1,0 +1,13 @@
+:root {
+    /*COLORS*/
+    --green: #5AC290;
+    --grey: #8B8B8B;
+    --grey-middle: #E7E5E5;
+    --grey-light: #FAFAFA;
+    --black: #272727;
+    /*FONTS*/
+    /*SIZES*/
+    --outer-indent: 40px;
+    --outer-indent-big: 80px;
+    --outer-indent-small: 20px;
+}

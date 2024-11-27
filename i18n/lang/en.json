@@ -1,0 +1,56 @@
+{
+      "company": "Company",
+      "advantages": "Advantages",
+      "history": "History",
+      "aboutus": "About us",
+      "partners": "For partners",
+      "clients": "For clients",
+      "vacancies": "Vacancies",
+      "contacts": "Contacts",
+
+
+
+      "home-link": "Find out more",
+      "downloadPDF": "Download PDF",
+      "contactUs": "Contact us",
+      
+
+      "home-about-tag": "About company",
+
+      "home-mission-tag": "Mission",
+      "home-ethics-tag": "Ethics",
+      "home-politics-tag": "Policy",
+      "home-politics-title": "Anti-corruption policy",
+
+      "home-docs-tag": "Documents",
+
+
+      "vacancies-contacts-dep": "HR Department Contacts",
+      "vacancies-position": "Open positions",
+
+      "vacancies-resp": "Main responsibilities",
+      "vacancies-req": "Requirements",
+      "vacancies-offer": "We offer",
+      "vacancies-how-to": "How to apply",
+      "vacancies-join": "Join us and become part of our team! Click the button below to learn more about the vacancy and submit your resume:",
+      "vacancies-link": "more details on hh.ru",
+
+      "partners-heading":"Partnership agreements with leading companies",
+      "partners-result": "Results",
+
+      "clients-heading":"Clients",
+      "clients-tag": "Want to become a client?",
+
+
+      "contacts-office": "Office",
+      "contacts-tel": "Ph.number/fax",
+      "contacts-email": "Email",
+      "contacts-text-us": "Write to us",
+
+
+      "form-name": "Name",
+      "form-phone": "Phone",
+      "form-email": "Email",
+      "form-message": "What service/product are you interested in"
+
+}

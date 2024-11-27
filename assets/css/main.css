@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+* {
+    font-family: "Geologica", sans-serif;
+}
+
+h1 {
+    color: var(--blue);
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    padding-bottom: 20px;
+}
+
+h2 {
+    color: var(--black);
+    font-size: 32px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+h3 {
+    color: var(--black);
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+
+br {
+    margin-top: 20px;
+    content: "";
+    display: block;
+}
+
+
+.rows {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 80px;
+
+    .left_part {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .right_part {
+        width: 60%;
+
+        h4{
+            font-size: 20px;
+            font-weight: 500;
+            padding-top: 40px;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.wrapping {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    .rows {
+        padding-top: 60px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    .rows {
+        flex-direction: column;
+        gap: var(--outer-indent);
+
+        .left_part {
+            gap: var(--outer-indent-small);
+        }
+
+        .right_part {
+            width: 100%;
+        }
+    }
+  }

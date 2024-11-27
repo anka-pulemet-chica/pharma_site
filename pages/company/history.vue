@@ -1,0 +1,4 @@
+<template>
+    <PagesHistoryHerosection />
+    <PagesHistoryTimeline />
+</template>
