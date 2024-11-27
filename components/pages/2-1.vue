@@ -18,7 +18,9 @@
 
                             <div v-html="extractText(item.list)"></div>
                         </div>
+                        
                         <img :src="`http://localhost:1337${item.img[0].url}`">
+                    
                 </div>
                 </div>
             </div>
@@ -95,9 +97,10 @@ let activeTag = ref(data.data[0].tag || null);
         padding: 60px 0;
         display: flex;
         justify-content: space-around;
+        align-items: flex-end;
 
         img {
-            max-height: 300px;
+            max-width: 150px;
         }
         .text {
             width: 43%;
@@ -119,5 +122,32 @@ let activeTag = ref(data.data[0].tag || null);
 
 .content {
     margin-bottom: 60px;
+}
+
+
+@media (max-width: 768px) {
+    .tags {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .spheres {
+        .sphere {
+            flex-direction: column;
+            gap: var(--outer-indent-small);
+            padding: var(--outer-indent-small);
+
+            .text {
+            width: 100%;
+        }
+        img {
+            align-self: center;
+        }
+        
+        }
+    }
+
 }
 </style>

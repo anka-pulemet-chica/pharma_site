@@ -82,5 +82,15 @@ watch(locale, async () => {
     }
 
 }
+
+@media (max-width: 768px) {
+    .items {
+        flex-direction: column;
+        gap: var(--outer-indent);
+        .item {
+            width: 100%;
+        }
+    }
+}
 </style>
 

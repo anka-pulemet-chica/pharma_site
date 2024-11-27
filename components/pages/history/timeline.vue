@@ -60,6 +60,8 @@ function nextSlide() {
         startIndex.value += 1;
       }
     }
+
+
 </script>
 
 <style scoped>
@@ -117,6 +119,16 @@ function nextSlide() {
 
     .arrow:disabled {
         opacity: 0.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .blocks {
+        flex-direction: column;
+
+        .block {
+            width: 100%;
+        }
     }
 }
 </style>

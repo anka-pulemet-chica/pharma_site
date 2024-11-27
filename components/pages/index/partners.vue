@@ -40,7 +40,7 @@ section {
 <script>
 export default {
   props: {
-    source_gallery: String
+    source_gallery: Array
   }
 };
 </script>

@@ -17,7 +17,7 @@
                 </div>
                 
                 <div class="wrapping">
-                    <NuxtImg src="/images/index/quote/Photo.png" />
+                    <NuxtImg :src="quote_image" />
                 </div>
             </div>
 
@@ -153,7 +153,8 @@ export default {
     quote_position: String,
     quote_contacts_title: String,
     quote_number: String, 
-    quote_email: String
+    quote_email: String,
+    quote_image: String
 
   }
 };

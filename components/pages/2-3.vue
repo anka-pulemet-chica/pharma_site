@@ -37,3 +37,12 @@ watch(locale, async () => {
   await loadData()
 })
 </script>
+
+<style scoped>
+@media (max-width: 480px) {
+  
+    h3 {
+        font-size: 22px;
+    }
+  }
+</style>

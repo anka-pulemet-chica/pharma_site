@@ -6,7 +6,7 @@
         <PagesIndexEthics :slogan="data.data.ethics_slogan" :list_title="data.data.ethics_list_title" :list="extractText(data.data.ethics_list)" :source="`http://localhost:1337${data.data.ethics_image.url}`"/>
         <PagesIndexPolitics :policy="data.data.policy"/>
         <!-- <PagesDocuments :docs="data.data.docs"/> -->
-        <PagesIndexQuote :quote_text="data.data.quote_text" :quote_fio="data.data.quote_fio" :quote_position="data.data.quote_position" :quote_contacts_title="data.data.quote_contacts_title" :quote_number="data.data.quote_number" :quote_email="data.data.quote_email"/>
+        <PagesIndexQuote :quote_text="data.data.quote_text" :quote_fio="data.data.quote_fio" :quote_position="data.data.quote_position" :quote_contacts_title="data.data.quote_contacts_title" :quote_number="data.data.quote_number" :quote_email="data.data.quote_email" :quote_image="`http://localhost:1337${data.data.quote_image.url}`"/>
  
 
 </template>

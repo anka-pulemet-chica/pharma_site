@@ -18,8 +18,9 @@
                 <div v-html="list"></div>
 
 
-
-                <NuxtImg class="image" :src="source" />
+                <div class="wrapping">
+                    <NuxtImg class="image" :src="source" />
+                </div>
             </article>
         </div>
 

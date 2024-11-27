@@ -5,9 +5,9 @@
             <div class="logo">
                 <NuxtImg src="/images/layouts/logo.svg" />
             </div>
-            <div>{{ dataInfo.data.info }}</div>
+            <div v-if="dataInfo?.data">{{ dataInfo.data.info }}</div>
             <div class="address">{{ dataAddress.data.address }}</div>
-            <div class="years">{{ dataInfo.data.years }}</div>
+            <div class="years" v-if="dataInfo?.data">{{ dataInfo.data.years }}</div>
         </div>
 
         <div class="contacts">
@@ -76,18 +76,15 @@ let dataInfo = ref(null);
 let dataAddress = ref(null);
 
 let loadData = async () => {
-dataPhones = null
-dataPhones = await fetchData('phone', 'en')
+dataPhones.value = await fetchData('phone', 'en')
 }
 
 let loadDataFooter = async () => {
-dataInfo = null
-dataInfo = await fetchData('footer', locale.value)
+dataInfo.value = await fetchData('footer', locale.value)
 }
 
 let loadDataAddress = async () => {
-dataAddress = null
-dataAddress = await fetchData('address', locale.value)
+dataAddress.value = await fetchData('address', locale.value)
 }
 
 await loadData();

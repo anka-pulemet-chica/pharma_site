@@ -57,7 +57,7 @@ export default {
   props: {
     about: String,
     source: String,
-    source_gallery: String
+    source_gallery: Array
   }
 };
 </script>
