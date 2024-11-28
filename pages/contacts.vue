@@ -33,7 +33,7 @@
         </div>
 
         <div class="right_part">
-            <h1> {{$t('contacts')}}</h1>
+            <h3> {{$t('contacts')}}</h3>
             <p> {{ data.data.description }}</p>
 
 
@@ -70,7 +70,13 @@
                     <button type="submit">{{$t('contacts-text-us')}}</button>
                 </div>
                 </form>
+
+                <p v-if="successMessage" class="success">{{ successMessage }}</p>
+                <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
             </div>
+
+            <h3> {{ $t('directions') }}</h3>
+            <div style="position:relative;overflow:hidden;"><a href="https://yandex.by/maps/157/minsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Минск</a><a href="https://yandex.by/maps/157/minsk/house/Zk4Ycg9pSkYAQFtpfXVyc3VjZw==/?ll=27.488869%2C53.932877&utm_medium=mapframe&utm_source=maps&z=17.1" style="color:#eee;font-size:12px;position:absolute;top:14px;">Радужная улица, 17 — Яндекс Карты</a><iframe src="https://yandex.by/map-widget/v1/?ll=27.488869%2C53.932877&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg2NjY3NDI1MBJD0JHQtdC70LDRgNGD0YHRjCwg0JzRltC90YHQuiwg0JLRj9GB0ZHQu9C60LDQstCw0Y8g0LLRg9C70ZbRhtCwLCAxNyIKDSvq20EVS7tXQg%2C%2C&z=17.1" width="800" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
         </div>
 </div>
 </template>
@@ -162,6 +168,14 @@ button:hover {
   display: flex;
   gap: 1rem;
 }
+
+@media (max-width: 480px) {
+  .boxes {
+    .box {
+      width: 100%;
+    }
+  }
+}
 </style>
 
 <script setup>
@@ -189,10 +203,51 @@ watch(locale, async () => {
 })
 
 
-let form = {
+let form = ref({
         name: "",
         email: "",
         phone: "",
         service: "",
-      }
+      })
+
+const successMessage = ref('');
+const errorMessage = ref('');
+
+
+const validateForm = () => {
+  if (!form.value.name || !form.value.email || !form.value.service) {
+    errorMessage.value = 'All fields are required.';
+    return false;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.value.email)) {
+    errorMessage.value = 'Please enter a valid email address.';
+    return false;
+  }
+  return true;
+};
+
+const submitForm = async () => {
+  successMessage.value = '';
+  errorMessage.value = '';
+
+  if (!validateForm()) return;
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form.value),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to send message');
+    }
+
+    successMessage.value = 'Your message has been sent successfully!';
+    form.value = { name: '', email: '', service: '' , phone: ''}; // Очистка формы
+  } catch (error) {
+    errorMessage.value = 'Failed to send message. Please try again later.';
+  }
+};
+
 </script>

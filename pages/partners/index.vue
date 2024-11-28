@@ -15,9 +15,9 @@
 
 
             <div class="companies">
-                <div v-for="item in data.data" :key="item" class="company">
+                <div v-for="(item, index) in data.data" :key="index" class="company">
                     <div v-if="activeTag == item.tag || !activeTag">
-                    <NuxtLink :to="`/partners/${item.name}`"> 
+                    <NuxtLink :to="$localePath(`/partners/${item.documentId}`)"> 
                         <img :src="`http://localhost:1337${item.icon.url}`">
                     </NuxtLink>
                 </div>

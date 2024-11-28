@@ -17,6 +17,10 @@
         position: relative;
         overflow: hidden;
         transition: color 0.2s;
+        
+        margin-bottom: var(--outer-indent-small);
+
+        z-index: -1;
     }
 
     .content::before {
@@ -39,5 +43,12 @@
     .content:hover {
         color: white;
         border-color: white;
+    }
+
+    @media (max-width: 480px) {
+        .content {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
     }
 </style>

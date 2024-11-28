@@ -44,7 +44,7 @@ br {
     .left_part {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: var(--outer-indent-small);;
     }
 
     .right_part {
@@ -119,6 +119,7 @@ br {
 
         .left_part {
             gap: var(--outer-indent-small);
+            width: 100%;
         }
 
         .right_part {

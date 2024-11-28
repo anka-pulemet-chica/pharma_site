@@ -8,18 +8,24 @@
 
 <script setup>
 import { useStrapiService } from '~/composables/useStrapiService'
+import { useI18n } from 'vue-i18n'
+import { ref, watch } from 'vue'
 
 const { fetchData } = useStrapiService()
+const { locale } = useI18n()
 
 let data = ref(null);
 
 let loadData = async () => {
-data = null
-  data = await fetchData('address', 'en')
+    data = null
+  data = await fetchData('address', locale.locale)
 }
 
-// Загружаем данные при загрузке компонента
 await loadData()
+
+watch(locale, async () => {
+  await loadData()
+})
 
 </script>
 

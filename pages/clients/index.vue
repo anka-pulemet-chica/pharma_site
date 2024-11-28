@@ -3,18 +3,7 @@
 
         <div class="left_part">
             <Tag> {{ $t('clients-tag') }}</Tag>
-
-            <div class="boxes">
-
-                <div class="box">
-                    <NuxtImg src="/images/vacancies/Vector.svg" width="23px"/>
-                    <span> {{ data.data.email }}</span>
-                </div>
-                <div class="box">
-                    <NuxtImg src="/images/vacancies/Vector1.svg" width="20px"/>
-                    <span>{{ data.data.phone }}</span>
-                </div>
-            </div>
+            <PhoneAndEmail />
         </div>
 
         <div class="right_part">
@@ -33,13 +22,13 @@
                 <div v-for="item in data_pharm.data" :key="item" class="item">
                     
                     <div v-if="activeTag == item.tag || !activeTag" class="company">
-                        <NuxtLink :to="`/clients/${item.name}`"> 
+                        <NuxtLink :to="$localePath(`/clients/${item.documentId}`)"> 
                         <div class="heading_nums"> {{ item.heading_nums }} <span class="heading_nums_desc"> {{ item.heading_nums_desc }}</span></div>
                         <div class="name"> {{ item.name }}</div>
                         <div class="short_desc"> {{ item.short_desc }}</div>
                         <div class="client_time"> {{ item.client_time }}</div>
                         <div class="container_img">
-                            <img :src="`http://localhost:1337${item.icon[0].url}`">
+                            <img :src="`http://localhost:1337${item.icon.url}`">
                         </div>
                         </NuxtLink>
                     </div>
@@ -119,24 +108,6 @@ watch(locale, async () => {
         border-color: var(--green);
     } 
 }
-
-.boxes {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.box {
-        display: inline-block;
-        border-radius: 10px;
-        padding: 10px 20px;
-        background-color: var(--grey-light);
-        border: 2px solid var(--grey-middle);
-
-        img {
-            margin-right: 10px;
-        }
-    }
 
 
 .companies {

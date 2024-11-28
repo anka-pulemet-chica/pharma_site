@@ -40,12 +40,17 @@
 
       "clients-heading":"Clients",
       "clients-tag": "Want to become a client?",
+      "partners-tag": "Want to become a partner?",
 
 
       "contacts-office": "Office",
       "contacts-tel": "Ph.number/fax",
       "contacts-email": "Email",
       "contacts-text-us": "Write to us",
+      "directions": "Directions",
+
+      "back": "Back",
+      
 
 
       "form-name": "Name",
