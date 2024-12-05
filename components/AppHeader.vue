@@ -28,12 +28,12 @@
         </nav>
 
         <div class="links">
-                <button @click="togglePhone" class="link green"><NuxtImg src="/images/layouts/call.svg" :class="{'active': isPhoneActive}"/> </button>
-                    <div :class="{ 'is-active': isPhoneActive,'is-not-active': !isPhoneActive}">
+                <button @click="toggleSection('phone')" class="link green"><NuxtImg src="/images/layouts/call.svg"/> </button>
+                    <div :class="{ 'is-active': activeSection === 'phone', 'is-not-active': activeSection !== 'phone' }">
                        <Phones/>
                     </div>
-                <button class="link green" @click="toggleLocation"><NuxtImg src="/images/layouts/location.svg" /></button>
-                <div :class="{ 'is-active': isLocationActive,'is-not-active': !isLocationActive}">
+                <button class="link green"  @click="toggleSection('location')"><NuxtImg src="/images/layouts/location.svg" /></button>
+                <div :class="{ 'is-active': activeSection === 'location', 'is-not-active': activeSection !== 'location' }">
                        <Location />
                     </div>
 
@@ -47,7 +47,12 @@
                     class="link white"
                     :class="{ active: locale === currentLocale }"
                     >
-                    {{ locale.toUpperCase() }}
+                    <span v-if="locale=='zh'">
+                            CH
+                        </span>
+                    <span v-else>
+                        {{ locale.toUpperCase() }}
+                    </span>
                     </button>
                 </div>
         </div>
@@ -69,7 +74,13 @@
                         class="link white"
                         :class="{ active: locale === currentLocale }"
                         >
-                        {{ locale.toUpperCase() }}
+                        <span v-if="locale=='zh'">
+                            CH
+                        </span>
+                        <span v-else>
+                            {{ locale.toUpperCase() }}
+                        </span>
+                        
                         </button>
                     </div>
 
@@ -350,8 +361,7 @@ export default {
                 ],
                 isDropdownOpen: false,
                 isMenuActive: false,
-                isPhoneActive: false,
-                isLocationActive: false
+                activeSection: null,
         }
     },
     methods: {
@@ -364,12 +374,10 @@ export default {
     toggleMenu() {
       this.isMenuActive = !this.isMenuActive;
     },
-    togglePhone() {
-      this.isPhoneActive = !this.isPhoneActive;
+    toggleSection (section) {
+        this.activeSection = this.activeSection === section ? null : section;
+        console.log(this.activeSection);
     },
-    toggleLocation() {
-      this.isLocationActive = !this.isLocationActive;
-    }
     },
 
     computed: {

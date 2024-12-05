@@ -98,6 +98,7 @@
 
 
             .desc {
+                height: 100%;
                 h5 {
                     color: var(--black);
                     font-size: 18px;
@@ -106,6 +107,7 @@
                 
                 display: flex;
                 flex-direction: column;
+                justify-content: space-between;
                 color: var(--grey);
                 gap: 10px;
 

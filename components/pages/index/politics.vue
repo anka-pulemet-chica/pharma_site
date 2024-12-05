@@ -4,7 +4,7 @@
                 <Tag>{{$t('home-politics-tag')}}</Tag>
             </div>
             <article class="right_part">
-                <h4>{{$t('home-politics-title')}}</h4>
+                <h3>{{$t('home-politics-title')}}</h3>
                 <p v-html="policy"></p>
             </article>
         </div>
@@ -14,6 +14,10 @@
 <style scoped>
 .rows {
   text-wrap: wrap;
+
+  h3 {
+    text-wrap: wrap;
+  }
 }
 </style>
 
