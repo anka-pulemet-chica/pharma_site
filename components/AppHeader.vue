@@ -61,7 +61,18 @@
 
 
 
-                <div class="mobile-links">
+                    <div class="language-switcher">
+                        <button
+                        v-for="locale in availableLocales"
+                        :key="locale"
+                        @click="switchLocale(locale)"
+                        class="link white"
+                        :class="{ active: locale === currentLocale }"
+                        >
+                        {{ locale.toUpperCase() }}
+                        </button>
+                    </div>
+
                     <nav class='nav'>
                         <div v-for="(item, index) in items" :key="index" >
                     <div v-if="item.items" @click.prevent="toggleDropdown">
@@ -81,18 +92,7 @@
                     </div>
                         </div>
                     </nav>
-                    <div class="language-switcher">
-                    <button
-                    v-for="locale in availableLocales"
-                    :key="locale"
-                    @click="switchLocale(locale)"
-                    class="link white"
-                    :class="{ active: locale === currentLocale }"
-                    >
-                    {{ locale.toUpperCase() }}
-                    </button>
-                </div>
-                </div>
+                    
             </div>
         </div>
     </div>
@@ -263,15 +263,16 @@
             .mobile-nav {
                 display: flex;
                 flex-direction: column;
-                align-items: flex-end;
+                align-items: flex-start;
                 gap: 40px;
                 padding: 2vw 4vw;
 
                 position: absolute;
                 width: 100%;
+                min-height: 100vh;
                 right: 0;
                 top: 0;
-                background: rgba(255, 255, 255, 0.2);
+                background: rgba(255, 255, 255, 0.5);
                 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
                 backdrop-filter: blur(5px);
                 -webkit-backdrop-filter: blur(5px);
@@ -279,20 +280,40 @@
 
                 .nav {
                     flex-direction: column;
-                    align-items: flex-end;
+                    align-items: flex-start;
+                    gap: 40px;
+                    padding-bottom: 20px;
+                    padding-right: 20px;
+                    font-size: 1.05rem;
 
                     .dropdown {
                         position: relative;
                         margin-top: 0; 
+                        backdrop-filter: none;
+                        background: transparent;
+
+
+                        div {
+                            margin-top: 10px;
+                            padding-top: 10px;
+                            padding-left: 40px;
+                        }
                     }
                 }
 
                 .language-switcher {
-                    align-self: stretch;
+                    align-self: center;
                     margin-left: 0;
-                    margin-right: 20px;
                     margin-top: 20px;
-                    margin-bottom: 20px;
+                    margin-bottom: 60px;
+                    gap: 20px;
+
+                    .link {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 30px;
+                        font-size: 1.1rem;
+                    }
                 }
             }
         }
