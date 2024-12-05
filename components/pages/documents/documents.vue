@@ -1,9 +1,9 @@
 <template>
-    <div class="documents">
+    <div class="rows">
             <div class="left_part">
                 <Tag>{{$t('home-docs-tag')}}</Tag>
             </div>
-            <article>
+            <div class="right_part">
                 <h3>{{$t('home-docs-tag')}}</h3>
                 <p> {{ docs }}</p>
                 
@@ -26,6 +26,7 @@
                         <span class="size">3.3 МБ</span>
                         <span class="download">  {{$t('downloadPDF')}}</span>
                     </div>
+                    
                 </div>
 
                 <div class="doc">
@@ -68,20 +69,14 @@
                     </div>
                 </div>
             </div>
-            </article>
+        </div>
         </div>
 
 </template>
 
 <style scoped>
 
-.documents {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding-top: 80px;
-
-        
+.rows {      
             .docs {
                 display: flex;
                 flex-wrap: wrap;
@@ -122,23 +117,40 @@
                     border-bottom: 2px solid var(--green);
                 }
             }
+    }
 
-        article {
-            width: 60%;
+    @media (max-width: 1190px) {
 
-            h3{
-                font-size: 32px;
-                font-weight: 700;
-                text-transform: uppercase;
-                color: var(--black);
-                padding-bottom: 20px;
-            }
-
-            p {
-                font-size: 16px;
+        .rows {
+            .docs {
+                .doc {
+                    flex-direction: column;
+                    justify-content: flex-end;
+                }
             }
         }
+        
     }
+
+    @media (max-width: 768px) {
+
+.rows {
+    .docs {
+        .doc {
+            width: 50%;
+            justify-content: flex-start;
+
+            .desc {
+                h5{
+                font-size: 0.95rem;
+            }
+            font-size: 0.8rem;
+                   }
+        }
+    }
+}
+
+}
 </style>
 
 
