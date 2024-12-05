@@ -1,5 +1,5 @@
 <template>
-        <PagesIndexHerosection :description="data.data.herosection_description" :source="`$${$config.public.StrapiUrl}${data.data.herosection_image.url}`"/>
+        <PagesIndexHerosection :description="data.data.herosection_description" :source="`${$config.public.StrapiUrl}${data.data.herosection_image.url}`"/>
         <PagesIndexPartners :source_gallery="data.data.partners_images"/>
         <PagesIndexAbout :about="data.data.about" :source="`${$config.public.StrapiUrl}${data.data.about_first_image.url}`" :source_gallery="data.data.about_images"/>
         <PagesIndexMission :slogan="data.data.mission_slogan" :slogan_description="data.data.mission_slogan_description" :list_title="data.data.mission_list_title" :list="extractText(data.data.mission_list)" :source="`${$config.public.StrapiUrl}${data.data.mission_image.url}`"/>
