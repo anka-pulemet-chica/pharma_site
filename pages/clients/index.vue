@@ -28,7 +28,7 @@
                         <div class="short_desc"> {{ item.short_desc }}</div>
                         <div class="client_time"> {{ item.client_time }}</div>
                         <div class="container_img">
-                            <img :src="`http://localhost:1337${item.icon.url}`">
+                            <img :src="`${$config.public.StrapiUrl}${item.icon.url}`">
                         </div>
                         </NuxtLink>
                     </div>

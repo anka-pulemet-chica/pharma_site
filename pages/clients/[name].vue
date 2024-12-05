@@ -17,7 +17,7 @@
             </div>
         
         <div class="wrapping">
-          <img :src="`http://localhost:1337${data.data.icon.url}`" :alt="data.data.name" />
+          <img :src="`${$config.public.StrapiUrl}${data.data.icon.url}`" :alt="data.data.name" />
         </div>
     </div>
         <p v-html="data.data.description" class="description"></p>

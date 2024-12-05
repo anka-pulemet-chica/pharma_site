@@ -12,8 +12,11 @@ export default defineNuxtConfig({
     cookieName: 'strapi_jwt',
 
   },
-
-
+  runtimeConfig: {
+    public: {
+      StrapiUrl: 'https:/strapi.phmg.by'
+    }
+  },
   i18n: {
     vueI18n: './i18n.config.ts',
     detectBrowserLanguage: {

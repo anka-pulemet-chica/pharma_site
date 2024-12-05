@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <img :src="`http://localhost:1337${data.data.wall.url}`">
+        <img :src="`${$config.public.StrapiUrl}${data.data.wall.url}`">
 
     <div class="rows">
         <div class="left_part">
@@ -12,7 +12,7 @@
             <p> {{ data.data.herosection }}</p>
 
 
-            <img :src="`http://localhost:1337${data.data.first_img.url}`" 
+            <img :src="`${$config.public.StrapiUrl}${data.data.first_img.url}`" 
 
         </div>
     </div>

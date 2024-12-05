@@ -13,7 +13,7 @@
         <h1>{{ data.data.name }}</h1>
         <p class="tag" >{{ data.data.tag }}</p>
         <div class="wrapping">
-          <img :src="`http://localhost:1337${data.data.icon.url}`" :alt="data.data.name" />
+          <img :src="`${$config.public.StrapiUrl}${data.data.icon.url}`" :alt="data.data.name" />
         </div>
         <p v-html="data.data.description"></p>
         

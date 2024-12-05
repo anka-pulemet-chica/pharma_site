@@ -19,7 +19,7 @@
                             <div v-html="extractText(item.list)"></div>
                         </div>
                         
-                        <img :src="`http://localhost:1337${item.img[0].url}`">
+                        <img :src="`${$config.public.StrapiUrl}${item.img[0].url}`">
                     
                 </div>
                 </div>

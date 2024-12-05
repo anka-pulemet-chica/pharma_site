@@ -3,7 +3,7 @@
 <section>
     <div class="partners">
         <div v-for="(item, index) in source_gallery" :key="index">
-            <NuxtImg :src="`http://localhost:1337${item.url}`" />
+            <NuxtImg :src="`${$config.public.StrapiUrl}${item.url}`" />
         </div>
     </div>
 </section>

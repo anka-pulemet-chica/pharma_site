@@ -16,7 +16,7 @@
 
         <div class="galery">
             <div v-for="(item, index) in source_gallery" :key="index" class="wrapping">
-                <NuxtImg :src="`http://localhost:1337${item.url}`" />
+                <NuxtImg :src="`${$config.public.StrapiUrl}${item.url}`" />
             </div>
 
         </div>
