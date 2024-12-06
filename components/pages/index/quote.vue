@@ -1,7 +1,7 @@
 <template>
     <div class="rows">
         <div class="left_part">
-                <Tag>{{ $t('contactUs') }}</Tag>
+                <NuxtLink :to="$localePath('/contacts')"><Tag>{{ $t('contactUs') }}</Tag></NuxtLink>
             </div> 
 
         <section class="right_part">

@@ -78,4 +78,11 @@ watch(locale, async () => {
 .description {
     padding-top: var(--outer-indent);
 }
+
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
 </style>

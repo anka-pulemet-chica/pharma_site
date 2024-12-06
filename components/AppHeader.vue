@@ -11,7 +11,7 @@
             <div v-for="(item, index) in items" :key="index">
                 <div v-if="item.items" @click.prevent="toggleDropdown">
                     <div>
-                        <NuxtLink :to="item.path"> {{ $t(item.title) }}</NuxtLink>
+                        <NuxtLink :to="$localePath(item.path)"> {{ $t(item.title) }} </NuxtLink>
                         <img src="/images/components/down.svg" class="dropdown-arrow" :class="{ open: isDropdownOpen }">
                     </div>
 
@@ -87,8 +87,8 @@
                     <nav class='nav'>
                         <div v-for="(item, index) in items" :key="index" >
                     <div v-if="item.items" @click.prevent="toggleDropdown">
-                        <div>
-                            <NuxtLink :to="item.path"> {{ $t(item.title) }}</NuxtLink>
+                        <div class="dropdown_parent">
+                            <NuxtLink :to="$localePath(item.path)"> {{ $t(item.title) }}</NuxtLink>
                             <img src="/images/components/down.svg" class="dropdown-arrow" :class="{ open: isDropdownOpen }">
                         </div>
 
@@ -151,6 +151,11 @@
                 position: relative;
             }
 
+            .dropdown_parent {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+
             a:hover {
                 cursor: pointer;
             }
@@ -194,7 +199,7 @@
             .dropdown-arrow {
                 position: relative;
                 top: 2px;
-                left: 3px;
+                left: 5px;
                 transition: transform 0.3s ease;
             }
 
@@ -310,6 +315,11 @@
                             padding-left: 40px;
                         }
                     }
+
+                    .dropdown-arrow {
+                    top: 0px;
+                    left: 10px;
+            }
                 }
 
                 .language-switcher {
@@ -370,6 +380,9 @@ export default {
     },
     switchLocale(locale) {
         this.$i18n.setLocale(locale);
+        if (this.isMenuActive) {
+            this.toggleMenu()
+        }
       },
     toggleMenu() {
       this.isMenuActive = !this.isMenuActive;

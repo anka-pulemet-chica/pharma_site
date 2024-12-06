@@ -44,3 +44,11 @@ watch(locale, async () => {
   await loadData()
 })
 </script>
+
+<style scoped>
+.rows {
+  h3 {
+    margin-top: var(--outer-indent);
+  }
+}
+</style>

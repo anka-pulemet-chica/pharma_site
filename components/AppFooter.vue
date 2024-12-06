@@ -15,7 +15,7 @@
             <div v-for="(item, index) in items" :key="index">
                 <div v-if="item.items" @click.prevent="toggleFooterDropdown">
                     <div>
-                        <NuxtLink :to="item.path"> {{ $t(item.title) }}</NuxtLink>
+                        <NuxtLink :to="$localePath(item.path)"> {{ $t(item.title) }}</NuxtLink>
                         <img src="/images/components/down.svg" class="dropdown-arrow" :class="{ open: isDropdownFooterOpen }">
                     </div>
 
@@ -120,6 +120,7 @@ footer {
             text-transform: uppercase;
             font-size: 12px;
             font-weight: bold;
+            justify-content: space-evenly;
 
 
             a {
@@ -152,11 +153,10 @@ footer {
             }
 
             .dropdown {
-                position: absolute;
+                position: relative;
                 margin-top: 10px;
                 line-height: 1.8;
                 
-                padding-right: 20px;
                 background: rgba(255, 255, 255, 0.2);
                 border-radius: 5px;
                 backdrop-filter: blur(5px);

@@ -27,7 +27,7 @@
                         <div class="name"> {{ item.name }}</div>
                         <div class="short_desc"> {{ item.short_desc }}</div>
                         <div class="client_time"> {{ item.client_time }}</div>
-                        <div class="container_img">
+                        <div class="wrapping">
                             <img :src="`${$config.public.StrapiUrl}${item.icon.url}`">
                         </div>
                         </NuxtLink>
@@ -129,14 +129,9 @@ watch(locale, async () => {
             padding: 40px 20px;
 
 
-            .container_img {
-            height: 70px;
-            width: 90%;
+            .wrapping {
+            padding: 10px;
             background-color: white;
-            display: flex;
-            align-items: center;
-            align-self: center;
-            justify-content: center;  
         }
 
         img {
@@ -179,5 +174,21 @@ watch(locale, async () => {
         }
 
     }
+    }
+
+    @media (max-width: 1024px) {
+        .companies {
+        .item {
+            width: 45%;
+        }
+        }
+    }
+
+    @media (max-width: 600px) {
+        .companies {
+        .item {
+            width: 100%;
+        }
+        }
     }
 </style>
