@@ -94,12 +94,12 @@
 
                         <div class="dropdown">
                             <div v-if="isDropdownOpen" v-for="(subitem, index) in item.items" :key="index">
-                                <NuxtLink :to="$localePath(subitem.path)" activeClass="activenav">{{ $t(subitem.title )}} </NuxtLink>
+                                <NuxtLink :to="$localePath(subitem.path)" activeClass="activenav" @click="toggleMenu">{{ $t(subitem.title )}} </NuxtLink>
                             </div>                    </div>
                     </div>
 
                     <div v-else>
-                        <NuxtLink :to="$localePath(item.path)" activeClass="activenav"> {{ $t(item.title) }}</NuxtLink>
+                        <NuxtLink :to="$localePath(item.path)" activeClass="activenav" @click="toggleMenu"> {{ $t(item.title) }}</NuxtLink>
                     </div>
                         </div>
                     </nav>

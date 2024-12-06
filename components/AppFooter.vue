@@ -14,7 +14,7 @@
             <nav class="nav">
             <div v-for="(item, index) in items" :key="index">
                 <div v-if="item.items" @click.prevent="toggleFooterDropdown">
-                    <div>
+                    <div class="dropdown_parent">
                         <NuxtLink :to="$localePath(item.path)"> {{ $t(item.title) }}</NuxtLink>
                         <img src="/images/components/down.svg" class="dropdown-arrow" :class="{ open: isDropdownFooterOpen }">
                     </div>
@@ -22,7 +22,8 @@
                     <div class="dropdown">
                         <div v-if="isDropdownFooterOpen" v-for="(subitem, index) in item.items" :key="index">
                             <NuxtLink :to="$localePath(subitem.path)" activeClass="activenav">{{ $t(subitem.title )}} </NuxtLink>
-                        </div>                    </div>
+                        </div>                    
+                    </div>
                 </div>
 
                 <div v-else>
@@ -167,13 +168,17 @@ footer {
 
             .dropdown-arrow {
                 position: relative;
-                top: 2px;
-                left: 3px;
+                left: 5px;
                 transition: transform 0.3s ease;
             }
 
             .dropdown-arrow.open {
                 transform: rotate(180deg);            
+            }
+
+            .dropdown_parent {
+                display: flex;
+                flex-wrap: nowrap;
             }
 
 
