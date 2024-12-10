@@ -46,7 +46,7 @@ const name = route.params.name;
 
 let loadData = async () => {
     data = null;
-    data = await fetchData(`clients/${name}`)
+    data = await fetchData(`clients/${name}`, locale.value)
 }
 
 let loadDataPhones = async () => {
