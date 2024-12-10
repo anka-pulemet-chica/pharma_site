@@ -1,12 +1,14 @@
 <template>
+    
 
     <div class="blocks">
+        <div class="inner" :style="innerStyle">
         <div v-for="(item,index) in visibleItems" :key="index" class="block">
-           <div class="year">{{ item.year }}</div> 
+           <div class="year" >{{ item.year }}</div> 
            <div class="desc">{{ item.description }}</div>
+           </div>
         </div>
     </div>
-
     <div class="scroll">
         <button class="arrow" @click="prevSlide" :disabled="startIndex == 0">
             <img src="/images/components/arrow-left.svg">
@@ -15,6 +17,7 @@
             <img src="/images/components/arrow-right.svg">
         </button>
     </div>
+    
 </template>
 
 
@@ -29,23 +32,20 @@ const { locale } = useI18n()
 let data = ref(null);
 let startIndex = ref(0);
 let itemsPerRow = 3;
+let transitioning = ref(false);
 
 let loadData = async () => {
 data = null
   data = await fetchData('histories', locale.value)
 }
 
-// Загружаем данные при загрузке компонента
 await loadData()
 
-// Обновляем данные при изменении локали
 watch(locale, async () => {
   await loadData()
 })
 
-
 const visibleItems = computed(() => {
-      // Отображаем только текущий ряд
       return data.data.slice(startIndex.value, startIndex.value + 3);
     })
 
@@ -61,26 +61,24 @@ function nextSlide() {
       }
     }
 
-
 </script>
 
 <style scoped>
-.blocks {
+.blocks {    
+    .inner {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: stretch;
     margin: 80px 0 20px;
     row-gap: 20px;
-    
+  }
 
     .block {
-        width: 30%;
-        height: max-content;
         background-color: var(--grey-light);
         border-radius: 20px;
         padding: 20px;
 
-        
 
         .year { 
             font-weight: 700;
@@ -100,16 +98,11 @@ function nextSlide() {
         border-radius: 30px;
         width: 40px;
         height: 40px;
-
         display: flex;
         justify-content: center;
         align-items: center;
-
         font-weight: 200;
-
         padding: 7px;
-
-        /* opacity: 0.5; */
         cursor: pointer;
     }
 
