@@ -1,6 +1,7 @@
 <template>
-    <div class="content">
+    <div class="wrapping">
         <img :src="`${$config.public.StrapiUrl}${data.data.wall.url}`">
+    </div>
 
     <div class="rows">
         <div class="left_part">
@@ -8,15 +9,10 @@
         </div>
         <div class="right_part">
             <h1> {{ $t('history') }}</h1>
-
             <p> {{ data.data.herosection }}</p>
-
-
-            <img :src="`${$config.public.StrapiUrl}${data.data.first_img.url}`" 
-
         </div>
     </div>
-    </div>
+
 </template>
 
 <script setup>
@@ -44,11 +40,9 @@ watch(locale, async () => {
 </script>
 
 <style scoped>
-.content {
-    .right_part{
-        p {
-            padding-bottom: 20px;
+  
+        .right_part {
+            margin-bottom: var(--outer-indent-big);
         }
-    }
-}
+  
 </style>

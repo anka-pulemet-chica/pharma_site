@@ -44,7 +44,12 @@ br {
     .left_part {
         display: flex;
         flex-direction: column;
-        gap: var(--outer-indent-small);;
+        gap: var(--outer-indent-small);
+        width: 30%;
+
+        .image {
+            width: 60%;
+        }
     }
 
     .right_part {
@@ -57,7 +62,16 @@ br {
             padding-bottom: 10px;
             text-transform: uppercase;
         }
+        
+        .image {
+            margin-top: var(--outer-indent);
+            display: flex;
+            justify-content: center;           
+        }
+
     }
+
+    
 }
 
 .wrapping {

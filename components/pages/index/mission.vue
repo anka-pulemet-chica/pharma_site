@@ -2,6 +2,8 @@
     <div class="rows">
             <div class="left_part">
                 <Tag> {{ $t('home-mission-tag') }}</Tag>
+                <NuxtImg :src="img1" class="image" />
+
             </div>
             <article class="right_part">
                 <h3>{{ slogan }}</h3>
@@ -10,8 +12,8 @@
                 <div v-html="list"></div>
 
 
-                <div class="wrapping">
-                    <NuxtImg class="image" :src="source" />
+                <div class="image">
+                    <NuxtImg :src="img2"/>
                 </div>
             </article>
         </div>
@@ -21,12 +23,12 @@
 <style scoped>
 .rows {
 
-        article {
-
-            .image {
-                padding-top: 40px;
-            }
+    .left_part{
+        .image {
+            width: 90%;
+            border-radius: 20px;
         }
+    }
     }
 </style>
 
@@ -37,7 +39,8 @@ export default {
     slogan_description: String, 
     list_title: String,
     list: String,
-    source: String
+    img1: String,
+    img2: String
 
   }
 };

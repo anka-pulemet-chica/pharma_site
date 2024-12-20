@@ -1,11 +1,11 @@
 <template>
 
     <div class="content">
-    <div class="tags">
+    <!-- <div class="tags">
                 <div v-for="item in data.data" :key="item" class="tag" :class=" {active: item.tag === activeTag }" @click=setActiveTag(item.tag)>
                         {{ item.tag }}
                 </div>
-            </div>
+            </div> -->
 
 
             <div class="spheres">

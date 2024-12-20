@@ -1,40 +1,46 @@
 <template>
-    <div>
-    <h1>PHARMA MEDICAL GROUP</h1>
-    <h2> {{ description }}</h2>
-    <div class="image"> <NuxtImg :src="source"/>  </div>
+    <div class="content">
+        <div class="text">
+        <h1>PHARMA MEDICAL GROUP</h1>
+        <h2> {{ description }}</h2> 
+    </div>
+    <div class="image"> 
+        <img src="/public/images/layouts/logo.svg"/> </div>
     </div>
 </template>
 
 <style scoped>
-    div {
-        margin-top: var(--outer-indent);
+    .content  {
+        margin-top: var(--outer-indent-big);
         display: flex;
-        flex-direction: column;
+        justify-content: space-between; 
         align-items: center;
     }
 
     h2 {
         font-size: 18px;
-        font-weight: 400;
         color: var(--grey);
+        font-weight: 200;
     }
 
     .image {
-        background-color: var(--grey-light);
-        width: 100%;
-        padding: 40px 0;
+
+        display: flex;
 
         img {
-            height: 30vw;
+            height: 250px;
         }
     }
 
     @media (max-width: 768px) {
+
+        .content  {
+            flex-direction: column;
+        }
         .image {
             img {
                 padding: 5px 0;
-                height: 30vh;
+                height: 200px;
             }
         }
     }
@@ -42,7 +48,7 @@
     @media (max-width: 480px) {
         .image {
             img {
-                height: 20vh;
+                height: 200px;
             }
         }
     }
@@ -54,8 +60,6 @@
 <script>
 export default {
   props: {
-    description: String,
-    source: String
-  }
+    description: String  }
 };
 </script>

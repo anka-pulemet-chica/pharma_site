@@ -123,7 +123,7 @@
 
         .logo {
             img {
-                width: 160px;
+                width: 200px;
             }
         }
 

@@ -14,7 +14,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      StrapiUrl: 'https:/strapi.phmg.by'
+      // StrapiUrl: 'https:/strapi.phmg.by',
+      StrapiUrl: 'http://localhost:1337'
     }
   },
   i18n: {

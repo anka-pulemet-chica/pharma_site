@@ -1,4 +1,4 @@
 <template>
     <PagesHistoryHerosection />
-    <PagesHistoryTimeline />
+    <PagesHistoryTimelinefull />
 </template>

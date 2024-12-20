@@ -1,5 +1,4 @@
 <template>
-    
 
     <div class="blocks">
         <div class="inner" :style="innerStyle">
@@ -70,7 +69,7 @@ function nextSlide() {
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    margin: 80px 0 20px;
+    /* margin: 80px 0 20px; */
     row-gap: 20px;
   }
 
@@ -92,6 +91,7 @@ function nextSlide() {
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-top: var(--outer-indent-small);
 
     .arrow {
         border: 2px solid var(--grey-middle);
