@@ -58,7 +58,7 @@ export default {
   props: {
     slogan: String,
     list_title: String,
-    list: String,
+    list: Array,
     source: String
   }
 };

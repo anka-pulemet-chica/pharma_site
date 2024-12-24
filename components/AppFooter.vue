@@ -54,7 +54,7 @@ const items = [
         ]
     },
     { title: 'partners', path: '/partners/' },
-    { title: 'clients', path: '/clients/' },
+    // { title: 'clients', path: '/clients/' },
     { title: 'vacancies', path: '/vacancies' },
     { title: 'contacts', path: '/contacts' },
     ];

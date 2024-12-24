@@ -5,9 +5,30 @@
     </div>
     <PagesAdvantagesPromotion/>
     <PagesAdvantagesBlocks/>
-    <Pages23/>
-    <Pages24/>
-    <Pages3/>
+    <div class="block_of_promotion text">
+        <div v-html="extractText(data.data.promotion)"></div>
+    </div>
+
+    <div class="logistics">
+        <div class="rows">
+            <div class="left_part">
+                <Tag> {{  $t('home-logistics-tag') }}</Tag>
+                <div class="images">
+                    <div v-for="(item, index) in data.data.logistics_img" :key="index" class="wrapping">
+                        <NuxtImg :src="`${$config.public.StrapiUrl}${item.url}`"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right_part">
+                <div v-html="data.data.logistics" class="text"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="heading">
+        <p class="text">{{ data.data.ending }}</p>
+    </div>
 </template>
 
 <style scoped>
@@ -30,6 +51,42 @@
     }
 }
 
+.block_of_promotion {
+    margin: var(--outer-indent-big) 0;
+}
+
+.rows {
+    padding: 0;
+
+    .right_part {
+        align-self: center;
+    }
+}
+
+.text {
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--outer-indent-small);
+    row-gap: var(--outer-indent-small);
+
+    .wrapping {
+        width: 40%;
+
+        img {
+            border-radius: 20px;
+        }
+    }
+
+    /* img {
+        width: 10%;
+    } */
+}
 @media (max-width: 768px) {
     .heading {
         .text {

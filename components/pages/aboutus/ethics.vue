@@ -50,7 +50,7 @@
 export default {
   props: {
    
-    list: String,
+    list: Array,
     title: String
   }
 };

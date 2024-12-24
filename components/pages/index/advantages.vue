@@ -26,7 +26,7 @@ export default {
     list: Array,
     img1: String, 
     img2: String,
-    logistics: String
+    logistics: Array
   }
 };
 </script>

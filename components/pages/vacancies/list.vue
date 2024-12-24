@@ -1,47 +1,52 @@
 <template>
     <div class="list">
-        <div v-for="(item, index) in data.data" :key="index" class="element">
-            <div class="heading" @click="toggleJob(index)">
-            <div>
-                <h4>{{ item.name }} </h4>
-                <p>{{ item.city }}, {{ item.category }}</p>
-
-            </div>
-            <div class="right">
-                <div class="department">{{ item.department }}</div>
-                <button> + </button>
-            </div>
-        </div>
-            <div v-if="index===activeJobId" class="desc">
-                <span>{{ item.description }}</span>
-
-                <h5>{{ $t('vacancies-resp') }}</h5>
-                <div class="ls" v-for="(ls, index) in item.responsibilities" :key="index">
-                    <div v-html=" extractTexts(ls)"></div>
+        <div v-if="data.data[0]">
+            <div v-for="(item, index) in data.data" :key="index" class="element">
+                <div class="heading" @click="toggleJob(index)">
+                <div>
+                    <h4>{{ item.name }} </h4>
+                    <p>{{ item.city }}, {{ item.category }}</p>
 
                 </div>
-
-                <h5>{{ $t('vacancies-req') }}</h5>
-
-                <div class="ls" v-for="(ls, index) in item.requirements" :key="index">
-                    <div v-html=" extractTexts(ls)"></div>
-
+                <div class="right">
+                    <div class="department">{{ item.department }}</div>
+                    <button> + </button>
                 </div>
-
-                <h5>{{ $t('vacancies-offer') }}</h5>
-
-                <div class="ls" v-for="(ls, index) in item.requirements" :key="index">
-                    <div v-html=" extractTexts(ls)"></div>
-
-                </div>
-
-                <h5>{{ $t('vacancies-how-to') }}</h5>
-                <span>{{ $t('vacancies-join') }}</span>
-
-                <a :href="item.link"><AppLink>{{ $t('vacancies-link') }}</AppLink></a>
-
             </div>
-        </div>
+                <div v-if="index===activeJobId" class="desc">
+                    <span>{{ item.description }}</span>
+
+                    <h5>{{ $t('vacancies-resp') }}</h5>
+                    <div class="ls" v-for="(ls, index) in item.responsibilities" :key="index">
+                        <div v-html=" extractTexts(ls)"></div>
+
+                    </div>
+
+                    <h5>{{ $t('vacancies-req') }}</h5>
+
+                    <div class="ls" v-for="(ls, index) in item.requirements" :key="index">
+                        <div v-html=" extractTexts(ls)"></div>
+
+                    </div>
+
+                    <h5>{{ $t('vacancies-offer') }}</h5>
+
+                    <div class="ls" v-for="(ls, index) in item.requirements" :key="index">
+                        <div v-html=" extractTexts(ls)"></div>
+
+                    </div>
+
+                    <h5>{{ $t('vacancies-how-to') }}</h5>
+                    <span>{{ $t('vacancies-join') }}</span>
+
+                    <a :href="item.link"><AppLink>{{ $t('vacancies-link') }}</AppLink></a>
+
+                </div>
+            </div>
+    </div>
+    <div v-else class="no-vac">
+        {{ $t('vacancies-no')}}
+    </div>    
     </div>
 </template>
 
@@ -74,15 +79,6 @@ function toggleJob(id) {
       activeJobId.value = activeJobId.value === id ? null : id; 
     } // Открыть/закрыть вакансию
 
-
-// function extractTexts(data) {
-//   if (data.type === 'list' && data.children) {
-//     return data.children.map((child) =>
-//       child.children.map((c) => c.text).join('')
-//     );
-//   }
-//   return [];
-// }
 
 function extractTexts(data) {
   if (data.type === 'list' && data.children) {
@@ -118,6 +114,7 @@ function extractTexts(data) {
         text-transform: uppercase;
         font-size: 18px;
         font-weight: 600;
+        padding-top: 0;
         padding-bottom: 10px;
     }
 
@@ -170,6 +167,13 @@ function extractTexts(data) {
         color: white;
         background-color: var(--green);
     }
+}
+
+.no-vac{ 
+    padding: var(--outer-indent) 0;
+    font-weight: 100;
+    font-size: 1.2rem;
+    color: var(--grey);
 }
 
 .element:hover button {

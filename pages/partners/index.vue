@@ -2,33 +2,44 @@
     <div class="rows">
 
         <div class="left_part">
-            <Tag> {{ $t('partners-result') }}</Tag>
+            <Tag> {{ $t('partners-tag') }}</Tag>
+            <PhoneAndEmail />
         </div>
 
         <div class="right_part">
             <h1> {{$t('partners-heading')}}</h1>
-            <div class="tags">
-                <div v-for="item in data.data" :key="item" class="tag" :class=" {active: item.tag === activeTag }" @click=setActiveTag(item.tag)>
-                        {{ item.tag }}
-                </div>
+        </div>
+        
+    </div>
+
+        <div class="tags">
+            <div v-for="item in allTags" :key="item" class="tag" :class=" {active: item === activeTag }" @click=setActiveTag(item)>
+                    {{ item }}
             </div>
+        </div>
 
 
             <div class="companies">
-                <div v-for="(item, index) in data.data" :key="index" class="company">
-                    <div v-if="activeTag == item.tag || !activeTag">
-                    <NuxtLink :to="$localePath(`/partners/${item.documentId}`)"> 
-                        <img :src="`${$config.public.StrapiUrl}${item.icon.url}`">
+                <div v-for="(item, index) in filteredCompanies" :key="index" class="item">
+                    <NuxtLink :to="$localePath(`/partners/${item.documentId}`)" class="content"> 
+                        <div class="text">
+                            <div class="name"> {{ item.name }}</div>
+                            <div class="short_desc"> {{ item.short_desc }}</div>
+                        </div>
+                        <div class="grapihic">
+                        <div class="tag"> {{ item.tag }}</div>
+                        <div class="wrapping">
+                            <img :src="`${$config.public.StrapiUrl}${item.icon.url}`"> 
+                        </div>
+                        </div>
                     </NuxtLink>
-                </div>
                 </div>
             </div>
 
 
-        </div>
+        
     
 
-</div>
 </template>
 
 
@@ -55,8 +66,6 @@ const { locale } = useI18n()
 
 let data = ref(null);
 
-let activeJobId = ref(null);
-
 let loadData = async () => {
 data = null
   data = await fetchData('partners', locale.value)
@@ -71,10 +80,15 @@ watch(locale, async () => {
 })
 
 
-function updateAndShowTags(tag) {
-    tags.value += tag;
-    return tags;  
-}
+const allTags = computed(()=> {
+    const allTags = data.data.map(company => company.tag); 
+    return [...new Set(allTags)];
+})
+
+const filteredCompanies = computed(()=> {
+    return data.data.filter((item) => item.tag == activeTag.value || !activeTag.value)
+})
+
 
 </script>
 
@@ -82,11 +96,14 @@ function updateAndShowTags(tag) {
 .tags {
     display: flex;
     gap: 20px;
+
+    margin-top: var(--outer-indent-big);
     
     .tag {
         border-radius: 10px;
         border: 2px solid var(--grey-middle);
         padding: 10px 10px;
+        cursor: pointer;
     }
 
     .active {
@@ -100,20 +117,69 @@ function updateAndShowTags(tag) {
         display: flex;
         flex-wrap: wrap;
         margin-top: 40px;
-        gap: 20px;
+        gap: var(--outer-indent);
 
-
-        .company {
-            width: 30%;
-            
-
-            a {
-            height: 70px;
+        .item {
+            width: 31%;
+            background-color: var(--grey-light);
             border: 1px solid var(--grey-middle);
-            border-radius: 10px;
+            border-radius: 20px;
+            padding: 40px 20px;
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%; 
+
+                gap: var(--outer-indent-small);
+
+            }
+            .wrapping {
+            margin-top: var(--outer-indent-small);
+            padding: 10px;
+            background-color: white;
+            height: 100px;
             display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 10px 20px;
+            }
+        
+
+
+        .name {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 1.5rem;
+            padding-bottom: var(--outer-indent-small);
+        }
+
+        .short_desc {
+            color: var(--grey);
+        }
+
+        .tag {
+            border: 1px solid black;
+            border-radius: 30px;
+            width: fit-content;
+            padding: 8px 15px;
+        }
+
+    }
+    }
+
+    @media (max-width: 1024px) {
+        .companies {
+        .item {
+            width: 45%;
+        }
+        }
+    }
+
+    @media (max-width: 600px) {
+        .companies {
+        .item {
+            width: 100%;
         }
         }
     }

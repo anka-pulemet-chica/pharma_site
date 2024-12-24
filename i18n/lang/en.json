@@ -23,6 +23,8 @@
       "home-politics-title": "Anti-corruption policy",
 
       "home-docs-tag": "Documents",
+      "home-logistics-tag": "Logistics",
+
 
 
       "vacancies-contacts-dep": "HR Department Contacts",
@@ -34,6 +36,7 @@
       "vacancies-how-to": "How to apply",
       "vacancies-join": "Join us and become part of our team! Click the button below to learn more about the vacancy and submit your resume:",
       "vacancies-link": "more details on hh.ru",
+      "vacancies-no" : "There are currently no vacancies available.",
 
       "partners-heading":"Partnership agreements with leading companies",
       "partners-result": "Results",

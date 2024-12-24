@@ -28,7 +28,7 @@
                         <div class="short_desc"> {{ item.short_desc }}</div>
                         <div class="client_time"> {{ item.client_time }}</div>
                         <div class="wrapping">
-                            <img :src="`${$config.public.StrapiUrl}${item.icon.url}`">
+                            <!-- <img :src="`${$config.public.StrapiUrl}${item.icon.url}`"> -->
                         </div>
                         </NuxtLink>
                     </div>
@@ -88,6 +88,9 @@ watch(locale, async () => {
   await loadData()
   await loadDataPharm()
 })
+
+
+
 </script>
 
 <style scoped>
