@@ -14,8 +14,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      // StrapiUrl: 'https:/strapi.phmg.by',
-      StrapiUrl: 'http://localhost:1337'
+      StrapiUrl: 'http://strapi.phmg.by',
+      // StrapiUrl: 'http://localhost:1337'
     }
   },
   i18n: {
@@ -56,5 +56,3 @@ export default defineNuxtConfig({
     ssr: false
   },
 )
-
-//de132d9cf8adbe8057a76f90bae30bc7c2301dbb98ef7e8aee46d42154019c6972f35105102e627cf263489c64bb735acd3588b8e5145f66b26d55e082b1cd1627dbd050043aa93e9afa626cbd0be0d93fefc415603df673e56923c9329b088a02c00ad492163a989bd0cb4be2a862e7d3640c65afb1fd344aaa6ac85bee4467
