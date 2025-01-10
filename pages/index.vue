@@ -13,6 +13,11 @@
 
 
 <script setup>
+
+definePageMeta({
+  layout: 'withoutlogo'
+})
+
 import { useStrapiService } from '~/composables/useStrapiService'
 import { extractText } from '~/composables/extractText'
 

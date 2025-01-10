@@ -134,6 +134,10 @@ br {
         .left_part {
             gap: var(--outer-indent-small);
             width: 100%;
+
+            .image {
+                width: 100%;
+            }
         }
 
         .right_part {

@@ -38,7 +38,7 @@ export default {
     slogan: String,
     slogan_description: String, 
     list_title: String,
-    list: Array,
+    list: String,
     img1: String,
     img2: String
 

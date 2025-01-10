@@ -143,6 +143,11 @@ const filteredCompanies = computed(()=> {
             display: flex;
             justify-content: center;
             align-items: center;
+
+            img {
+                height: 90%;
+                width:fit-content;
+            }
             }
         
 

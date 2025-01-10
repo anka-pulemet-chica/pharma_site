@@ -23,10 +23,10 @@
 <script>
 export default {
   props: {
-    list: Array,
+    list: String,
     img1: String, 
     img2: String,
-    logistics: Array
+    logistics: String
   }
 };
 </script>

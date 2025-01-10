@@ -106,8 +106,10 @@ function extractTexts(data) {
 
     .heading {
     display: flex;
+    gap: 20px;
     justify-content: space-between;
-    align-items: center;}
+    align-items: center;
+}
 
 
     h4 {
@@ -124,13 +126,15 @@ function extractTexts(data) {
     }
 
     .department {
-        padding: 10px;
+        padding: 10px 10px;
+        text-align: center;
         border: 1px solid var(--grey-middle);
         border-radius: 10px;
     }  
     
     .right {
         display: flex;
+        align-items: center;
         gap: 40px;
 
         button {
@@ -179,5 +183,27 @@ function extractTexts(data) {
 .element:hover button {
     color: white;
     background-color: var(--grey-middle);
+}
+
+@media (max-width: 600px) {
+
+    .element {
+    .right {
+        display: flex;
+        gap: 10px;
+
+        .department {
+            padding: 5px 10px;
+
+            width: max-content;
+        }
+
+        button {
+            font-size: 20px;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
 }
 </style>

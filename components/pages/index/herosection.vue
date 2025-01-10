@@ -1,11 +1,13 @@
 <template>
     <div class="content">
+        
+        <div class="image"> 
+            <img src="/public/images/layouts/logo.svg"/> 
+        </div>
         <div class="text">
-        <h1>PHARMA MEDICAL GROUP</h1>
-        <h2> {{ description }}</h2> 
-    </div>
-    <div class="image"> 
-        <img src="/public/images/layouts/logo.svg"/> </div>
+            <h1>PHARMA MEDICAL GROUP</h1>
+            <h2> {{ description }}</h2> 
+        </div>
     </div>
 </template>
 

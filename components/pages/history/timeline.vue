@@ -1,14 +1,5 @@
 <template>
-
-    <div class="blocks">
-        <div class="inner" :style="innerStyle">
-        <div v-for="(item,index) in visibleItems" :key="index" class="block">
-           <div class="year" >{{ item.year }}</div> 
-           <div class="desc">{{ item.description }}</div>
-           </div>
-        </div>
-    </div>
-    <div class="scroll">
+     <div class="scroll">
         <button class="arrow" @click="prevSlide" :disabled="startIndex == 0">
             <img src="/images/components/arrow-left.svg">
         </button>
@@ -16,6 +7,16 @@
             <img src="/images/components/arrow-right.svg">
         </button>
     </div>
+
+    <div class="blocks">
+        <div class="inner">
+        <div v-for="(item,index) in visibleItems" :key="index" class="block">
+           <div class="year" >{{ item.year }}</div> 
+           <div class="desc">{{ item.description }}</div>
+           </div>
+        </div>
+    </div>
+   
     
 </template>
 
@@ -29,6 +30,7 @@ const { fetchData } = useStrapiService()
 const { locale } = useI18n()
 
 let data = ref(null);
+let sortedData = ref(null);
 let startIndex = ref(0);
 let itemsPerRow = 3;
 let transitioning = ref(false);
@@ -36,6 +38,11 @@ let transitioning = ref(false);
 let loadData = async () => {
 data = null
   data = await fetchData('histories', locale.value)
+  sortedData = data.data.sort((a, b) => {
+        const yearA = parseInt(a.year.match(/\d+/)[0], 10)
+        const yearB = parseInt(b.year.match(/\d+/)[0], 10)
+        return yearA - yearB
+    })
 }
 
 await loadData()
@@ -45,25 +52,27 @@ watch(locale, async () => {
 })
 
 const visibleItems = computed(() => {
-      return data.data.slice(startIndex.value, startIndex.value + 3);
+      return sortedData.slice(startIndex.value, startIndex.value + 3);
     })
 
 function prevSlide() {
       if (startIndex.value > 0) {
-        startIndex.value -= 1;
+        startIndex.value -= 3;
       }
     }
 
 function nextSlide() {
       if (startIndex.value + 3 < data.data.length) {
-        startIndex.value += 1;
+        startIndex.value += 3;
       }
     }
 
 </script>
 
 <style scoped>
-.blocks {    
+.blocks {  
+    min-height: 650px;
+  
     .inner {
     display: flex;
     flex-direction: column;
@@ -91,7 +100,7 @@ function nextSlide() {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: var(--outer-indent-small);
+    margin-bottom: var(--outer-indent-small);
 
     .arrow {
         border: 2px solid var(--grey-middle);

@@ -2,7 +2,7 @@
 
     <div class="blocks">
         <div class="inner" :style="innerStyle">
-        <div v-for="(item,index) in data.data" :key="index" class="block">
+        <div v-for="(item,index) in sortedData" :key="index" class="block">
            <div class="year" >{{ item.year }}</div> 
            <div class="desc">{{ item.description }}</div>
            </div>
@@ -14,16 +14,25 @@
 <script setup>
 import { useStrapiService } from '~/composables/useStrapiService'
 import { useI18n } from 'vue-i18n'
-import { ref, watch } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 const { fetchData } = useStrapiService()
 const { locale } = useI18n()
 
 let data = ref(null);
+let sortedData = ref(null);
+
+
 let loadData = async () => {
 data = null
-  data = await fetchData('histories', locale.value)
+data = await fetchData('histories', locale.value)
+sortedData = data.data.sort((a, b) => {
+        const yearA = parseInt(a.year.match(/\d+/)[0], 10)
+        const yearB = parseInt(b.year.match(/\d+/)[0], 10)
+        return yearA - yearB
+    })
 }
+
 
 await loadData()
 

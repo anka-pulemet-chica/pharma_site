@@ -76,8 +76,7 @@
             </div>
 
             <h3> {{ $t('directions') }}</h3>
-            <div style="position:relative;overflow:hidden;"><a href="https://yandex.by/maps/157/minsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Минск</a><a href="https://yandex.by/maps/157/minsk/house/Zk4Ycg9pSkYAQFtpfXVyc3VjZw==/?ll=27.488869%2C53.932877&utm_medium=mapframe&utm_source=maps&z=17.1" style="color:#eee;font-size:12px;position:absolute;top:14px;">Радужная улица, 17 — Яндекс Карты</a><iframe src="https://yandex.by/map-widget/v1/?ll=27.488869%2C53.932877&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg2NjY3NDI1MBJD0JHQtdC70LDRgNGD0YHRjCwg0JzRltC90YHQuiwg0JLRj9GB0ZHQu9C60LDQstCw0Y8g0LLRg9C70ZbRhtCwLCAxNyIKDSvq20EVS7tXQg%2C%2C&z=17.1" width="800" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
-        </div>
+            <div style="position:relative;overflow:hidden;"><a href="https://yandex.by/maps/157/minsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Минск</a><a href="https://yandex.by/maps/157/minsk/house/Zk4YcgBoQEUPQFtpfXVyeHlqbA==/?ll=27.476083%2C53.938430&utm_medium=mapframe&utm_source=maps&z=14.8" style="color:#eee;font-size:12px;position:absolute;top:14px;">Проспект Победителей, 106 — Яндекс Карты</a><iframe src="https://yandex.by/map-widget/v1/?ll=27.476083%2C53.938430&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNjQ4OTIwOTMxEkjQkdC10LvQsNGA0YPRgdGMLCDQnNGW0L3RgdC6LCDQv9GA0LDRgdC_0LXQutGCINCf0LXRgNCw0LzQvtC20YbQsNGeLCAxMDYiCg3N1NtBFSbCV0I%2C&z=14.8" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>        </div>
 </div>
 </template>
 
