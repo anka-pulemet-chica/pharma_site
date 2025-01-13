@@ -22,20 +22,24 @@
         </nav>
 
         <div class="links">
-                <button @click="toggleSection('phone')" class="link green"><NuxtImg src="/images/layouts/call.svg"/> </button>
+                <!-- <button @click="toggleSection('phone')" class="link green"><NuxtImg src="/images/layouts/call.svg"/> </button>
                     <div :class="{ 'is-active': activeSection === 'phone', 'is-not-active': activeSection !== 'phone' }">
-                       <Phones/>
-                    </div>
+                        <Phones />
+                    </div> -->
                 <button class="link green"  @click="toggleSection('location')"><NuxtImg src="/images/layouts/location.svg" /></button>
                 <div :class="{ 'is-active': activeSection === 'location', 'is-not-active': activeSection !== 'location' }">
-                       <Location />
+        
+                       <Location :address="address" v-model="activeSection" :phones="phones"/>
                     </div>
 
                 
 
-                <div class="language-switcher desktop">
-                    <button
-                    v-for="locale in availableLocales"
+                <div class="language-switcher">
+                    <button @click="toggleSection('lang')" class="active link"> {{ currentLocale.toUpperCase() }} </button>
+                    <div class="other-locales" v-if="activeSection === 'lang'">
+                        <div v-for="locale in availableLocales">
+                        <button
+                     v-if="locale !== currentLocale"
                     :key="locale"
                     @click="switchLocale(locale)"
                     class="link white"
@@ -49,6 +53,8 @@
                     </span>
                     </button>
                 </div>
+                    </div> 
+                </div>
         </div>
 
 
@@ -60,7 +66,7 @@
 
 
 
-                    <div class="language-switcher">
+                    <!-- <div class="language-switcher">
                         <button
                         v-for="locale in availableLocales"
                         :key="locale"
@@ -76,7 +82,7 @@
                         </span>
                         
                         </button>
-                    </div>
+                    </div> -->
 
                     <nav class='nav'>
                         <div v-for="(item, index) in items" :key="index" >
@@ -195,7 +201,6 @@
         .links {
 
             display: flex;
-            gap: 5px;
 
             .green {
                 background-color: var(--green);
@@ -222,17 +227,33 @@
                 margin-left: 10px;
                 display: flex;
                 gap: 0.1rem;
+                flex-direction: column;
+                position: relative;
 
                 button.active {
                 background-color: #22439A;
                 color: white;
                 border-color: #22439A;
             }
+                button:hover {
+                    background-color: #22429a4e;
+                }
 
             .white {
-                border: 2px solid var(--grey-middle);
-                font-weight: bold;
+                border: 1px solid #22429a32;
+                color: #22439A;
+                background-color: #22429a10;
             }
+
+            .other-locales {
+                    position: absolute;
+                    top: 40px;
+
+                    .white {
+                        margin-top: 5px;
+                    }
+
+                }
             }
 
     }
@@ -353,7 +374,7 @@ export default {
                 ],
                 isDropdownOpen: false,
                 isMenuActive: false,
-                activeSection: null,
+                activeSection: null
         }
     },
     methods: {
@@ -371,9 +392,8 @@ export default {
     },
     toggleSection (section) {
         this.activeSection = this.activeSection === section ? null : section;
-        console.log(this.activeSection);
-    },
-    },
+    }
+},
 
     computed: {
       availableLocales() {
@@ -385,4 +405,30 @@ export default {
     }
 }
 
+</script>
+
+<script setup>
+import { useStrapiService } from '~/composables/useStrapiService'
+import { ref, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n();
+
+const { fetchData } = useStrapiService()
+
+let address = ref(null);
+let phones = ref(null);
+
+let loadData = async () => {
+    address = null
+    phones = null
+    address = await fetchData('address', locale.value);
+    phones = await fetchData('phone', 'en');
+}
+
+await loadData()
+
+watch(locale, async () => {
+  await loadData()
+})
 </script>

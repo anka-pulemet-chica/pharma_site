@@ -1,44 +1,119 @@
 <template>
-    <section>
-        <div class="phone">{{ data.data.address }}</div>
-        
+    <section @click="closeAddress" v-if="model">
+        <div class="location" id="card">
+            <div class="close">
+                X
+            </div>
+            <div class="wrapping" id="card">
+                <div class="text">
+                <p id="card"> {{ $t('contacts') }}: </p>
+                <div id="card" class="info" v-if="address"> {{ props.address.data.address }}</div>
+                <p id="card"> {{ $t('contacts-tel') }}: </p>
+                <div id="card" class="info" v-if="phones"> {{ props.phones.data.phone_1 }}</div>
+                <div id="card" class="info" v-if="phones"> {{ props.phones.data.phone_2 }}</div>
+                <div id="card" class="info" v-if="phones"> {{ props.phones.data.phone_3 }}</div>
+
+            </div>
+                <div class="tree">
+                <NuxtImg src="/images/layouts/tree.svg"  id="card"/>
+                </div>
+            </div> 
+    </div>
     </section>
     
 </template>
 
 <script setup>
-import { useStrapiService } from '~/composables/useStrapiService'
-import { useI18n } from 'vue-i18n'
-import { ref, watch } from 'vue'
+    const props = defineProps(['address', 'phones'])
+    const model = defineModel()
 
-const { fetchData } = useStrapiService()
-const { locale } = useI18n()
-
-let data = ref(null);
-
-let loadData = async () => {
-    data = null
-  data = await fetchData('address', locale.locale)
-}
-
-await loadData()
-
-watch(locale, async () => {
-  await loadData()
-})
+    function closeAddress(event) {
+        if(event.target.id !== 'card') {
+            model.value = null
+        }
+    }
 
 </script>
 
 <style scoped>
     section {
         position: absolute;
-        border: 2px solid var(--green);
-        background-color: white;
-        border-radius: 10px;
-        top: 80px;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.7);
+        
 
-        padding: 20px;
-        margin-left: -80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .location {
+            background-color: var(--green);
+            color: white;
+            border-radius: 10px;
+            padding: 10px 20px;
+            width: fit-content;
+            
+            position: relative;
+            
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+
+            .close {
+
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 10px;
+                padding: 5px 7px;
+                font-size: 7px;
+                font-weight: 200;
+                background-color: rgba(255, 255, 255, 0.1);
+                cursor: pointer;
+
+            }
+
+            .close:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+
+            }
+
+            .wrapping {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .text {
+                padding-bottom: 40px;
+                max-width: 300px;
+
+                p {
+                    padding-top: 20px;
+                    text-transform: uppercase;
+                    font-weight: 200;
+                    padding-bottom: 10px;
+                    text-wrap: wrap;
+                }
+            }
+
+            .tree {
+
+                align-self: flex-end;
+
+                img {
+                    height: 70px;
+
+                }
+            }
+        }
         
     }
 </style>

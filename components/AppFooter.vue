@@ -63,7 +63,6 @@ let isDropdownFooterOpen = ref(false);
 
 function toggleFooterDropdown() {
       isDropdownFooterOpen.value = !isDropdownFooterOpen.value;
-      console.log(isDropdownFooterOpen)
     }
 import { useStrapiService } from '~/composables/useStrapiService'
 import { useI18n } from 'vue-i18n'
