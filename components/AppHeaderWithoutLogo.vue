@@ -34,7 +34,7 @@
 
                 
 
-                <div class="language-switcher">
+                <div class="language-switcher" @mouseleave="toggleSection(none)">
                     <button @click="toggleSection('lang')" class="active link"> {{ currentLocale.toUpperCase() }} </button>
                     <div class="other-locales" v-if="activeSection === 'lang'">
                         <div v-for="locale in availableLocales">
