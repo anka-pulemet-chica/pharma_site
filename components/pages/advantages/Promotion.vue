@@ -1,6 +1,6 @@
 <template>
 
-    <div class="content">
+    <div class="content_promotion">
     <!-- <div class="tags">
                 <div v-for="item in data.data" :key="item" class="tag" :class=" {active: item.tag === activeTag }" @click=setActiveTag(item.tag)>
                         {{ item.tag }}
@@ -120,7 +120,7 @@ let activeTag = ref(data.data[0].tag || null);
     }
 }
 
-.content {
+.content_promotion {
     margin-bottom: 60px;
 }
 

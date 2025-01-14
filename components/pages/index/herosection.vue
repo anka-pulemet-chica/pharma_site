@@ -1,5 +1,5 @@
 <template>
-    <div class="content">
+    <div class="content_herosection">
         
         <div class="image"> 
             <img src="/public/images/layouts/logo.svg"/> 
@@ -12,7 +12,7 @@
 </template>
 
 <style scoped>
-    .content  {
+    .content_herosection {
         margin-top: var(--outer-indent-big);
         display: flex;
         justify-content: space-between; 
@@ -36,7 +36,7 @@
 
     @media (max-width: 768px) {
 
-        .content  {
+        .content_herosection  {
             flex-direction: column;
         }
         .image {

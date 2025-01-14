@@ -23,7 +23,7 @@
         z-index: -1;
     }
 
-    .content::before {
+    /* .content::before {
             content: '';
             position: absolute;
             top: 0;
@@ -38,12 +38,12 @@
         }
     .content:hover::before {
             transform: translate(0, 0);
-        }
+        } */
 
-    .content:hover {
+    /* .content:hover {
         color: white;
         border-color: white;
-    }
+    } */
 
     @media (max-width: 480px) {
         .content {

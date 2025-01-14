@@ -1,7 +1,7 @@
 <template>
     <div class="rows">
         <div class="left_part">
-            <Tag>{{ $t('advantages') }}</Tag>
+          <NuxtLink :to="$localePath('/company/advantages')"><Tag>{{ $t('advantages') }}</Tag></NuxtLink>
             <NuxtLink :to="$localePath('/company/advantages')"><AppLink>{{ $t('home-link') }}</AppLink></NuxtLink>
             <NuxtImg :src="img1" class="image" />
 

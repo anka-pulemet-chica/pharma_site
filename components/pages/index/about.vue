@@ -2,7 +2,7 @@
     <section>
         <div class="rows">
             <div class="left_part">
-                <Tag> {{ $t('home-about-tag') }}</Tag>
+                <NuxtLink :to="$localePath('/company/aboutus')"><Tag> {{ $t('home-about-tag') }}</Tag></NuxtLink>
                 <NuxtLink :to="$localePath('/company/aboutus')"><AppLink>{{ $t('home-link') }}</AppLink></NuxtLink>
             </div>
             <article class="right_part">
