@@ -6,13 +6,13 @@
 
 <style scoped>
     .content {
-        border: 1px solid var(--black);
+        border: 1px solid var(--grey);
         border-radius: 30px;
         padding: 9px 15px;
         width: fit-content;
         height:fit-content;
-        font-size: 16px;
-        font-weight: 400;
+        font-size: 14px;
+        font-weight: 200;
 
         position: relative;
         overflow: hidden;
@@ -21,6 +21,8 @@
         margin-bottom: var(--outer-indent-small);
 
         z-index: -1;
+        
+
     }
 
     /* .content::before {

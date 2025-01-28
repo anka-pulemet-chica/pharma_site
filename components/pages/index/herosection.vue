@@ -20,9 +20,8 @@
     }
 
     h2 {
-        font-size: 18px;
-        color: var(--grey);
-        font-weight: 200;
+        font-size: 20px;
+        font-weight: 100;
     }
 
     .image {

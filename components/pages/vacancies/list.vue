@@ -86,7 +86,7 @@ function extractTexts(data) {
       return `
         <div class="ls-item">
           
-          ${child.children.map((c) => `<img src="/images/components/li.svg" style="position: relative; padding-right: 15px; top: 10px;"/><span style="color: #8B8B8B; line-height: 2;">${c.text}</span>`).join('')}
+          ${child.children.map((c) => `<img src="/images/components/li.svg" style="position: relative; padding-right: 15px; top: 10px;"/><span style="line-height: 1.5; font-weight: 200;">${c.text}</span>`).join('')}
         </div>
       `;
     }).join('');
@@ -122,7 +122,7 @@ function extractTexts(data) {
 
     p {
         font-size: 14px;
-        color: var(--grey);
+        font-weight: 200;
     }
 
     .department {
@@ -176,8 +176,9 @@ function extractTexts(data) {
 .no-vac{ 
     padding: var(--outer-indent) 0;
     font-weight: 100;
-    font-size: 1.2rem;
-    color: var(--grey);
+    font-size: 20px;
+    font-weight: 100;
+    color: var(--green);
 }
 
 .element:hover button {

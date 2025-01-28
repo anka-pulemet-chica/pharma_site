@@ -103,7 +103,7 @@ function nextSlide() {
     margin-bottom: var(--outer-indent-small);
 
     .arrow {
-        border: 2px solid var(--grey-middle);
+        border: 1px solid var(--grey-middle);
         border-radius: 30px;
         width: 40px;
         height: 40px;
@@ -113,6 +113,7 @@ function nextSlide() {
         font-weight: 200;
         padding: 7px;
         cursor: pointer;
+        opacity: 0.7;
     }
 
     .arrow:hover {
@@ -120,7 +121,7 @@ function nextSlide() {
     }
 
     .arrow:disabled {
-        opacity: 0.5;
+        opacity: 0.3;
     }
 }
 

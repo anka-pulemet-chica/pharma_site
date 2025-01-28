@@ -62,8 +62,7 @@ watch(locale, async () => {
 
             .nums_desc {
                 font-size: 1rem;
-                color: var(--grey);
-                font-weight: 400;
+                font-weight: 200;
             }
         }
 
@@ -74,8 +73,8 @@ watch(locale, async () => {
         }
 
         .desc {
-            color: var(--grey);
             padding-top: 60px;
+            font-weight: 200;
         }
 
 

@@ -100,9 +100,9 @@ const filteredCompanies = computed(()=> {
     margin-top: var(--outer-indent-big);
     
     .tag {
-        border-radius: 10px;
-        border: 2px solid var(--grey-middle);
-        padding: 10px 10px;
+        border-radius: 30px;
+        border: 1px solid var(--grey-middle);
+        padding: 8px 14px;
         cursor: pointer;
     }
 
@@ -160,11 +160,11 @@ const filteredCompanies = computed(()=> {
         }
 
         .short_desc {
-            color: var(--grey);
+            font-weight: 200;
         }
 
         .tag {
-            border: 1px solid black;
+            border: 1px solid var(--grey-middle);
             border-radius: 30px;
             width: fit-content;
             padding: 8px 15px;

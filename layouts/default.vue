@@ -18,6 +18,7 @@
 header {
     display: flex;
     justify-content: space-between;
+    
 }
 .margins {
   margin: 1vw 8vw;
@@ -28,6 +29,8 @@ header {
             img {
                 width: 200px;
             }
+
+            
         }
         
 

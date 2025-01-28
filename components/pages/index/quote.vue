@@ -72,10 +72,10 @@
         }
 
         span {
-                color: var(--grey);
                 padding-top: 10px;
                 display: block;
                 padding-left: 20px;
+                font-weight: 200;
             }
 
         .wrapping {

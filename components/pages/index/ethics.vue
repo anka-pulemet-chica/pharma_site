@@ -31,7 +31,6 @@
     .desc {
         display: flex;
         flex-direction: column;
-        color: var(--grey);
 
         .size {
             font-size: 14px;

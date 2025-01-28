@@ -5,7 +5,7 @@
                 X
             </div>
             <div class="wrapping" id="card">
-                <div class="text">
+                <div class="text" id="card">
                 <p id="card"> {{ $t('contacts') }}: </p>
                 <div id="card" class="info" v-if="address"> {{ props.address.data.address }}</div>
                 <p id="card"> {{ $t('contacts-tel') }}: </p>
@@ -72,9 +72,9 @@
             .close {
 
                 border: 1px solid rgba(255, 255, 255, 0.3);
-                border-radius: 10px;
-                padding: 5px 7px;
-                font-size: 7px;
+                border-radius: 30px;
+                padding: 8px 12px;
+                font-size: 12px;
                 font-weight: 200;
                 background-color: rgba(255, 255, 255, 0.1);
                 cursor: pointer;

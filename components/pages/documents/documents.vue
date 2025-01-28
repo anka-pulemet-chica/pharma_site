@@ -108,7 +108,6 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                color: var(--grey);
                 gap: 10px;
 
 

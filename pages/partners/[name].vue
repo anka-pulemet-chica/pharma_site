@@ -53,11 +53,11 @@ watch(locale, async () => {
 
 <style scoped>
 .tag {
-  border-radius: 10px;
+  border-radius: 30px;
   color: white;
   background-color: var(--green);
   border: 2px solid var(--green);
-  padding: 10px;
+  padding: 8px 15px;
   width: fit-content;
 }
 

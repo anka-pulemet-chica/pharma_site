@@ -5,8 +5,10 @@
             <div v-for="(item, index) in items" :key="index">
                 <div v-if="item.items" @click.prevent="toggleDropdown">
                     <div>
-                        <NuxtLink :to="$localePath(item.path)"> {{ $t(item.title) }} </NuxtLink>
-                        <img src="/images/components/down.svg" class="dropdown-arrow" :class="{ open: isDropdownOpen }">
+                        <NuxtLink :to="$localePath(item.path)"> {{ $t(item.title) }}
+                            <img src="/images/components/down.svg" class="dropdown-arrow" :class="{ open: isDropdownOpen }">
+                         </NuxtLink>
+                        
                     </div>
 
                     <div class="dropdown">
@@ -112,8 +114,8 @@
 
 <style scoped>
     .header {
-        font-size: 12px;
-        font-weight: bold;
+        font-size: 16px;
+        font-weight: 200;
 
         display: flex;
         justify-content: right;
@@ -131,12 +133,13 @@
 
         .nav {
             display: flex;
-            gap: 15px;
             text-transform: uppercase;
 
             a {
                 transition: transform 0.1s ease;
                 position: relative;
+                padding: 0 10px;
+                margin: 0 3px;
             }
 
             .dropdown_parent {
@@ -170,14 +173,17 @@
 
             .dropdown {
                 position: absolute;
+                margin-left: -20px;
                 margin-top: 10px;
                 line-height: 1.8;
                 
+                padding-left: 20px;
                 padding-right: 20px;
-                background: rgba(255, 255, 255, 0.2);
+                padding-bottom: 10px;
+                padding-top: 10px;
+                background: rgba(255, 255, 255, 1);
                 border-radius: 5px;
-                backdrop-filter: blur(5px);
-                
+
             }
 
             .activenav {
@@ -186,7 +192,7 @@
 
             .dropdown-arrow {
                 position: relative;
-                top: 2px;
+                top: 5px;
                 left: 5px;
                 transition: transform 0.3s ease;
             }

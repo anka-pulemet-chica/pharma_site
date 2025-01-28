@@ -24,7 +24,6 @@ section {
         padding-bottom: var(--outer-indent-small);
         /* font-size: 0.9rem; */
         font-weight: 200;
-        color: var(--grey);
         /* text-align: center; */
         /* text-transform: uppercase; */
     }

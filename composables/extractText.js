@@ -35,9 +35,9 @@ export function extractText(dataArray) {
                 ${child.children
                   .map(
                     (c) =>
-                      `<div style="margin-top: 10px; position: static;">
+                      `<div style="margin-top: 5px; position: static;">
                          <img src="/images/components/li.svg" style="position: relative; padding-right: 15px; top: 10px;" />
-                         <span style="color: #8B8B8B; line-height: 1.5;">${c.text}</span>
+                         <span style="line-height: 1.5; font-weight: 200;">${c.text}</span>
                        </div>`
                   )
                   .join('')}
