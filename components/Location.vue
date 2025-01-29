@@ -98,7 +98,7 @@
                 p {
                     padding-top: 20px;
                     text-transform: uppercase;
-                    font-weight: 200;
+                    font-weight: 400;
                     padding-bottom: 10px;
                     text-wrap: wrap;
                 }

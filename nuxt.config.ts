@@ -54,6 +54,6 @@ export default defineNuxtConfig({
     langDir: 'lang/'
     },
 
-    ssr: false
+    ssr: true
   },
 )

@@ -12,9 +12,9 @@
                 <div v-html="list"></div>
 
 
-                <div class="image">
+                <!-- <div class="image">
                     <NuxtImg :src="img2"/>
-                </div>
+                </div> -->
             </article>
         </div>
 
@@ -39,9 +39,14 @@ export default {
     slogan_description: String, 
     list_title: String,
     list: String,
-    img1: String,
-    img2: String
-
+    img1: String
   }
 };
 </script>
+
+<style scoped>
+
+.right_part > h3:first-child {
+    color: var(--green);
+}
+</style>

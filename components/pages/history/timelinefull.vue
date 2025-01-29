@@ -2,7 +2,8 @@
 
     <div class="blocks">
         <div class="inner" :style="innerStyle">
-        <div v-for="(item,index) in sortedData" :key="index" class="block">
+        <div v-for="(item,index) in sortedData" :key="index" class="block" :class="{ 'slide-out-left': item.isSlidingOut, 'slide-out-right': item.isSlidingOutRight }"
+                @scroll.passive="handleScroll">
            <div class="year" >{{ item.year }}</div> 
            <div class="desc">{{ item.description }}</div>
            </div>
@@ -33,13 +34,11 @@ sortedData = data.data.sort((a, b) => {
     })
 }
 
-
 await loadData()
 
 watch(locale, async () => {
   await loadData()
 })
-
 </script>
 
 <style scoped>
@@ -54,15 +53,19 @@ watch(locale, async () => {
   }
 
     .block {
+        display: flex;
+        align-items: center;
         background-color: var(--grey-light);
         border-radius: 20px;
         padding: 20px;
 
 
         .year { 
-            font-weight: 700;
+            font-weight: 600;
             color: var(--green);
-            padding-bottom: 20px;
+            padding: 20px;
+            font-size: 1.5rem;
+
         }
     }
 }

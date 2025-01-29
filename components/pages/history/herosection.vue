@@ -1,10 +1,12 @@
 <template>
-    <div class="wrapping">
+
+<div class="wrap_img">
         <img :src="`${$config.public.StrapiUrl}${data.data.wall.url}`">
     </div>
-
+    
     <div class="rows">
         <div class="left_part">
+        
             <Tag>{{ data.data.tag }}</Tag>
         </div>
         <div class="right_part">
@@ -12,6 +14,8 @@
             <p> {{ data.data.herosection }}</p>
         </div>
     </div>
+
+   
 
 </template>
 
@@ -43,6 +47,19 @@ watch(locale, async () => {
   
         .right_part {
             margin-bottom: var(--outer-indent-big);
+        }
+
+        .wrap_img {
+            height: 300px;
+            overflow: hidden;
+            border-radius: 50px;
+            img {
+                position: relative;
+                top: -200px;
+                width: 100%;
+                z-index: -1;
+
+            }
         }
   
 </style>

@@ -23,7 +23,7 @@ section {
     p {
         padding-bottom: var(--outer-indent-small);
         /* font-size: 0.9rem; */
-        font-weight: 200;
+        font-weight: 400;
         /* text-align: center; */
         /* text-transform: uppercase; */
     }

@@ -54,6 +54,7 @@ br {
 
     .right_part {
         width: 60%;
+        font-weight: 400;
 
         h4{
             font-size: 20px;

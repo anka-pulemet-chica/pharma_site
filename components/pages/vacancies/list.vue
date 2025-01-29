@@ -17,24 +17,17 @@
                     <span>{{ item.description }}</span>
 
                     <h5>{{ $t('vacancies-resp') }}</h5>
-                    <div class="ls" v-for="(ls, index) in item.responsibilities" :key="index">
-                        <div v-html=" extractTexts(ls)"></div>
 
-                    </div>
+                    <div v-html=" extractText(item.responsibilities)"></div>
+
 
                     <h5>{{ $t('vacancies-req') }}</h5>
+                    <div v-html=" extractText(item.requirements)"></div>
 
-                    <div class="ls" v-for="(ls, index) in item.requirements" :key="index">
-                        <div v-html=" extractTexts(ls)"></div>
-
-                    </div>
 
                     <h5>{{ $t('vacancies-offer') }}</h5>
+                    <div> {{  item.offer }}</div>
 
-                    <div class="ls" v-for="(ls, index) in item.requirements" :key="index">
-                        <div v-html=" extractTexts(ls)"></div>
-
-                    </div>
 
                     <h5>{{ $t('vacancies-how-to') }}</h5>
                     <span>{{ $t('vacancies-join') }}</span>
@@ -54,6 +47,8 @@
 import { useStrapiService } from '~/composables/useStrapiService'
 import { useI18n } from 'vue-i18n'
 import { ref, watch } from 'vue'
+import { extractText } from '~/composables/extractText'
+
 
 const { fetchData } = useStrapiService()
 const { locale } = useI18n()
@@ -78,21 +73,6 @@ watch(locale, async () => {
 function toggleJob(id) {
       activeJobId.value = activeJobId.value === id ? null : id; 
     } // Открыть/закрыть вакансию
-
-
-function extractTexts(data) {
-  if (data.type === 'list' && data.children) {
-    return data.children.map((child) => {
-      return `
-        <div class="ls-item">
-          
-          ${child.children.map((c) => `<img src="/images/components/li.svg" style="position: relative; padding-right: 15px; top: 10px;"/><span style="line-height: 1.5; font-weight: 200;">${c.text}</span>`).join('')}
-        </div>
-      `;
-    }).join('');
-  }
-  return [];
-}
 
 </script>
 
@@ -122,7 +102,7 @@ function extractTexts(data) {
 
     p {
         font-size: 14px;
-        font-weight: 200;
+        font-weight: 400;
     }
 
     .department {
@@ -140,7 +120,7 @@ function extractTexts(data) {
         button {
             color: var(--green);
             font-size: 28px;
-            font-weight: 200;
+            font-weight: 400;
             border: 1px solid var(--grey-middle);
             border-radius: 30px;
             width: 40px;

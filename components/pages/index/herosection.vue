@@ -21,7 +21,7 @@
 
     h2 {
         font-size: 20px;
-        font-weight: 100;
+        font-weight: 400;
     }
 
     .image {

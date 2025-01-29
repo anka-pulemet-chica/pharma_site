@@ -43,11 +43,9 @@
 
 
     .text {
-        font-size: 1.2rem;
+        /* font-size: 1.3rem; */
         width: 50%;
         text-align: center;
-
-        font-weight: 200;
     }
 }
 
@@ -64,8 +62,7 @@
 }
 
 .text {
-    font-size: 1.2rem;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 

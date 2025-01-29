@@ -62,7 +62,7 @@ watch(locale, async () => {
 
             .nums_desc {
                 font-size: 1rem;
-                font-weight: 200;
+                font-weight: 400;
             }
         }
 
@@ -74,7 +74,7 @@ watch(locale, async () => {
 
         .desc {
             padding-top: 60px;
-            font-weight: 200;
+            font-weight: 400;
         }
 
 

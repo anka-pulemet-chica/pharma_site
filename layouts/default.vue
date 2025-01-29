@@ -26,11 +26,9 @@ header {
 }
 
 .logo {
-            img {
-                width: 200px;
-            }
-
-            
+        img {
+            width: 200px;      
+        }  
         }
         
 

@@ -11,30 +11,30 @@
         </div>
         
     </div>
-
+<!-- 
         <div class="tags">
             <div v-for="item in allTags" :key="item" class="tag" :class=" {active: item === activeTag }" @click=setActiveTag(item)>
                     {{ item }}
             </div>
-        </div>
+        </div> -->
 
 
-            <div class="companies">
-                <div v-for="(item, index) in filteredCompanies" :key="index" class="item">
-                    <NuxtLink :to="$localePath(`/partners/${item.documentId}`)" class="content"> 
-                        <div class="text">
-                            <div class="name"> {{ item.name }}</div>
-                            <div class="short_desc"> {{ item.short_desc }}</div>
-                        </div>
-                        <div class="grapihic">
-                        <div class="tag"> {{ item.tag }}</div>
-                        <div class="wrapping">
-                            <img :src="`${$config.public.StrapiUrl}${item.icon.url}`"> 
-                        </div>
-                        </div>
-                    </NuxtLink>
-                </div>
+        <div class="companies">
+            <div v-for="(item, index) in filteredCompanies" :key="index" class="item">
+                <NuxtLink :to="$localePath(`/partners/${item.documentId}`)" class="content"> 
+                    <div class="text">
+                        <h3> {{ item.name }}</h3>
+                        <div class="short_desc"> {{ item.short_desc }}</div>
+                    </div>
+                    <div class="grapihic">
+                    <!-- <div class="tag"> {{ item.tag }}</div> -->
+                    <div class="wrapping">
+                        <img :src="`${$config.public.StrapiUrl}${item.icon.url}`"> 
+                    </div>
+                    </div>
+                </NuxtLink>
             </div>
+        </div>
 
 
         
@@ -121,10 +121,11 @@ const filteredCompanies = computed(()=> {
 
         .item {
             width: 31%;
-            background-color: var(--grey-light);
-            border: 1px solid var(--grey-middle);
-            border-radius: 20px;
+            background-color: #f8f7f7;
+            /* border: 1px solid var(--grey-middle); */
+            border-radius: 10px;
             padding: 40px 20px;
+            transition: all 0.2s;
 
             .content {
                 display: flex;
@@ -160,7 +161,7 @@ const filteredCompanies = computed(()=> {
         }
 
         .short_desc {
-            font-weight: 200;
+            font-weight: 400;
         }
 
         .tag {
@@ -171,6 +172,11 @@ const filteredCompanies = computed(()=> {
         }
 
     }
+
+        .item:hover {
+            background-color: #e8e8e8;
+            transform: scale(1.02);
+        }
     }
 
     @media (max-width: 1024px) {

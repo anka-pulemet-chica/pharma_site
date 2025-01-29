@@ -4,15 +4,15 @@
         <nav class="nav desktop">
             <div v-for="(item, index) in items" :key="index">
                 <div v-if="item.items" @click.prevent="toggleDropdown">
-                    <div>
+                    <div @mouseleave="toggleSection(none)" @mouseenter="toggleSection('dropdown')">
                         <NuxtLink :to="$localePath(item.path)"> {{ $t(item.title) }}
-                            <img src="/images/components/down.svg" class="dropdown-arrow" :class="{ open: isDropdownOpen }">
+                            <img src="/images/components/down.svg" class="dropdown-arrow" :class="{ open:  activeSection == 'dropdown' }">
                          </NuxtLink>
                         
                     </div>
 
-                    <div class="dropdown">
-                        <div v-if="isDropdownOpen" v-for="(subitem, index) in item.items" :key="index">
+                    <div class="dropdown" @mouseleave="toggleSection(none)" @mouseenter="toggleSection('dropdown')">
+                        <div v-if="activeSection == 'dropdown' " v-for="(subitem, index) in item.items" :key="index">
                             <NuxtLink :to="$localePath(subitem.path)" activeClass="activenav">{{ $t(subitem.title )}} </NuxtLink>
                         </div>                    </div>
                 </div>
@@ -28,16 +28,9 @@
                     <div :class="{ 'is-active': activeSection === 'phone', 'is-not-active': activeSection !== 'phone' }">
                         <Phones />
                     </div> -->
-                <button class="link green"  @click="toggleSection('location')"><NuxtImg src="/images/layouts/location.svg" /></button>
-                <div :class="{ 'is-active': activeSection === 'location', 'is-not-active': activeSection !== 'location' }">
-        
-                       <Location :address="address" v-model="activeSection" :phones="phones"/>
-                    </div>
 
-                
-
-                <div class="language-switcher" @mouseleave="toggleSection(none)">
-                    <button @click="toggleSection('lang')" class="active link"> {{ currentLocale.toUpperCase() }} </button>
+                <div class="language-switcher" @mouseleave="toggleSection(none)" @mouseenter="toggleSection('lang')">
+                    <button class="active link"> {{ currentLocale.toUpperCase() }} </button>
                     <div class="other-locales" v-if="activeSection === 'lang'">
                         <div v-for="locale in availableLocales">
                         <button
@@ -57,6 +50,12 @@
                 </div>
                     </div> 
                 </div>
+
+                <button class="link green"  @click="toggleSection('location')"><NuxtImg src="/images/layouts/location.svg" /></button>
+                <div :class="{ 'is-active': activeSection === 'location', 'is-not-active': activeSection !== 'location' }">
+        
+                       <Location :address="address" v-model="activeSection" :phones="phones" style="z-index: 1;"/>
+                    </div>
         </div>
 
 
@@ -115,13 +114,12 @@
 <style scoped>
     .header {
         font-size: 16px;
-        font-weight: 200;
+        font-weight: 400;
 
         display: flex;
         justify-content: right;
         align-items: center;
         gap: 5vw;
-        
 
         .is-not-active {
                 display: none;
@@ -174,7 +172,7 @@
             .dropdown {
                 position: absolute;
                 margin-left: -20px;
-                margin-top: 10px;
+                padding-top: 10px;
                 line-height: 1.8;
                 
                 padding-left: 20px;
@@ -230,11 +228,12 @@
             }
 
         .language-switcher {
-                margin-left: 10px;
+                margin-right: 10px;
                 display: flex;
                 gap: 0.1rem;
                 flex-direction: column;
                 position: relative;
+                z-index: 0;
 
                 button.active {
                 background-color: #22439A;
@@ -254,7 +253,6 @@
             .other-locales {
                     position: absolute;
                     top: 40px;
-
                     .white {
                         margin-top: 5px;
                     }
@@ -279,7 +277,7 @@
 
             .menu-toggle {
                 position: relative;
-                font-weight: 200;
+                font-weight: 400;
                 color: var(--green);
                 margin-right: 2vw;
                 font-size: 32px;

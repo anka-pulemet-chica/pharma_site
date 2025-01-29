@@ -1,54 +1,36 @@
 <template>
-    <div class="content">
+    <div class="tag" id="tag">
         <slot />
     </div>
 </template>
 
-<style scoped>
-    .content {
+<style>
+    .tag {
         border: 1px solid var(--grey);
         border-radius: 30px;
         padding: 9px 15px;
         width: fit-content;
         height:fit-content;
         font-size: 14px;
-        font-weight: 200;
+        font-weight: 300;
+
+        transition: all 0.2s;
 
         position: relative;
-        overflow: hidden;
-        transition: color 0.2s;
         
-        margin-bottom: var(--outer-indent-small);
-
-        z-index: -1;
-        
+        margin-bottom: var(--outer-indent-small);        
 
     }
 
-    /* .content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 30px;
-            background-color: var(--green);
-            transform: translate(-100%, -100%);
-            transition: transform 0.1s;
-            z-index: -1;
-        }
-    .content:hover::before {
-            transform: translate(0, 0);
-        } */
 
-    /* .content:hover {
+    .tag:hover {
         color: white;
         border-color: white;
-    } */
+        background-color: var(--green);
+    }
 
     @media (max-width: 480px) {
-        .content {
+        .tag {
             font-size: 0.9rem;
             margin-bottom: 10px;
         }

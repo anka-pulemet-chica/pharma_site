@@ -201,7 +201,7 @@ footer {
 
             .years {
                 color: var(--grey);
-                font-weight: 300;
+                font-weight: 400;
             }
         }
         
