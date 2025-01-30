@@ -1,10 +1,9 @@
 <template>        
 <NuxtLayout>
     <div class="err">
-            <h1>Sorry, this page is not found</h1>
-             <h4> Error status is {{ error.statusCode }}</h4>
-             <p> {{ error}}</p>
-             <NuxtLink :to="$localePath('index')"> To the homepage </NuxtLink>
+            <h1>{{ $t('error-heading') }}</h1>
+            <h4 v-if="error"> {{ $t('error-status')}} {{ error.statusCode }}</h4>
+            <NuxtLink :to="$localePath('index')"> {{ $t('error-button-back') }} </NuxtLink>
     </div>
 </NuxtLayout>
 

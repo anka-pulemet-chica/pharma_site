@@ -6,7 +6,7 @@
                 <NuxtImg src="/images/layouts/logo.svg" />
             </div>
             <div v-if="dataInfo?.data">{{ dataInfo.data.info }}</div>
-            <div class="address">{{ dataAddress.data.address }}</div>
+            <div class="address">{{ dataContacts.data.address }}</div>
             <div class="years" v-if="dataInfo?.data">{{ dataInfo.data.years }}</div>
         </div>
 
@@ -31,12 +31,12 @@
                 </div>
             </div>
         </nav>
-            <div class="email"> {{ dataPhones.data.email }}</div>
+        <a :href=" `mailto:${dataContacts.data.email}`"> <div class="email"> {{ dataContacts.data.email }}</div> </a>
             <div class="row"> 
-                <div class="phone"> {{ dataPhones.data.phone_1 }}</div>
-                <div class="phone"> {{ dataPhones.data.phone_2 }}</div>
+                <a :href=" `tel:${dataContacts.data.number1}`"> <div class="phone"> {{ dataContacts.data.number1 }}</div> </a>
+                <a :href=" `tel:${dataContacts.data.number2}`"><div class="phone"> {{ dataContacts.data.number2 }}</div> </a>
             </div>
-            <div class="phone"> {{ dataPhones.data.phone_3 }}</div>
+            <a :href=" `tel:${dataContacts.data.fax}`"><div class="phone"> {{ dataContacts.data.fax }}</div> </a>
         </div>
     </div>
     </footer>
@@ -54,7 +54,6 @@ const items = [
         ]
     },
     { title: 'partners', path: '/partners/' },
-    // { title: 'clients', path: '/clients/' },
     { title: 'vacancies', path: '/vacancies' },
     { title: 'contacts', path: '/contacts' },
     ];
@@ -71,29 +70,29 @@ import { ref, watch } from 'vue'
 const { fetchData } = useStrapiService()
 const { locale } = useI18n()
 
-let dataPhones = ref(null);
+// let dataPhones = ref(null);
 let dataInfo = ref(null);
-let dataAddress = ref(null);
+let dataContacts = ref(null);
 
-let loadData = async () => {
-dataPhones.value = await fetchData('phone', 'en')
-}
+// let loadData = async () => {
+// dataPhones.value = await fetchData('phone', 'en')
+// }
 
 let loadDataFooter = async () => {
 dataInfo.value = await fetchData('footer', locale.value)
 }
 
-let loadDataAddress = async () => {
-dataAddress.value = await fetchData('address', locale.value)
+let loadDataContacts = async () => {
+dataContacts.value = await fetchData('page-contact', locale.value)
 }
 
-await loadData();
+// await loadData();
 await loadDataFooter();
-await loadDataAddress();
+await loadDataContacts();
 
 watch(locale, async () => {
   await loadDataFooter();
-  await loadDataAddress()
+  await loadDataContacts()
 })
 </script>
 

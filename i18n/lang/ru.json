@@ -56,5 +56,9 @@
   "form-name": "Имя",
   "form-phone": "Телефон",
   "form-email": "Email",
-  "form-message": "Какая услуга/товар интересует"
+  "form-message": "Какая услуга/товар интересует",
+
+  "error-heading": "Извините, эта страница не найдена",
+  "error-status": "Статус ошибки",
+  "error-button-back": "На главную страницу"
 }

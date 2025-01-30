@@ -172,13 +172,8 @@
             .dropdown {
                 position: absolute;
                 margin-left: -20px;
-                padding-top: 10px;
                 line-height: 1.8;
-                
-                padding-left: 20px;
-                padding-right: 20px;
-                padding-bottom: 10px;
-                padding-top: 10px;
+                padding: 10px 20px;
                 background: rgba(255, 255, 255, 1);
                 border-radius: 5px;
 
@@ -314,6 +309,8 @@
                         margin-top: 0; 
                         backdrop-filter: none;
                         background: transparent;
+                        padding: 0 20px;
+
 
 
                         div {

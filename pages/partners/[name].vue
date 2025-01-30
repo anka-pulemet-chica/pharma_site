@@ -2,7 +2,7 @@
   <NuxtLink :to="$localePath('partners')"><AppLink>{{ $t('back') }}</AppLink></NuxtLink>
     <div class="rows">
       <div class="left_part">
-        <Tag>{{ $t('partners-tag') }}</Tag>
+        <!-- <Tag>{{ $t('partners-tag') }}</Tag> -->
         <PhoneAndEmail />
         
 

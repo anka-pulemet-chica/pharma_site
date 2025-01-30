@@ -59,6 +59,10 @@
       "form-name": "Name",
       "form-phone": "Phone",
       "form-email": "Email",
-      "form-message": "What service/product are you interested in"
+      "form-message": "What service/product are you interested in",
 
+
+      "error-heading": "Sorry, this page is not found",
+      "error-status": "Error status is",
+      "error-button-back": "To the homepage"
 }

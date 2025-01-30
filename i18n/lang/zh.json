@@ -56,5 +56,9 @@
   "form-name": "名稱",
   "form-phone": "電話",
   "form-email": "電子郵件",
-  "form-message": "您對什麼服務/產品有興趣"
+  "form-message": "您對什麼服務/產品有興趣",
+
+  "error-heading":"抱歉，找不到该页面",
+  "error-status":"错误状态为",
+  "error-button-back":"返回首页"
 }

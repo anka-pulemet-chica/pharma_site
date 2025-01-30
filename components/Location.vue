@@ -9,9 +9,9 @@
                 <p id="card"> {{ $t('contacts') }}: </p>
                 <div id="card" class="info" v-if="address"> {{ props.address.data.address }}</div>
                 <p id="card"> {{ $t('contacts-tel') }}: </p>
-                <div id="card" class="info" v-if="phones"> {{ props.phones.data.phone_1 }}</div>
-                <div id="card" class="info" v-if="phones"> {{ props.phones.data.phone_2 }}</div>
-                <div id="card" class="info" v-if="phones"> {{ props.phones.data.phone_3 }}</div>
+                <a :href=" `tel:${props.phones.data.phone_1}`"> <div id="card" class="info" v-if="phones"> {{ props.phones.data.phone_1 }}</div> </a>
+                <a :href=" `tel:${props.phones.data.phone_2}`">  <div id="card" class="info" v-if="phones"> {{ props.phones.data.phone_2 }}</div> </a>
+                <a :href=" `tel:${props.phones.data.phone_3}`"> <div id="card" class="info" v-if="phones"> {{ props.phones.data.phone_3 }}</div> </a>
 
             </div>
                 <div class="tree">
@@ -67,6 +67,11 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+
+            a {
+                color: white;
+            }
+
 
 
             .close {

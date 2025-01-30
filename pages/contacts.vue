@@ -11,15 +11,15 @@
                 <Tag> {{ $t('contacts-tel') }}</Tag>
                 <div class="box">
                     <NuxtImg src="/images/vacancies/Vector1.svg" width="20px"/>
-                    <span>{{ data.data.number1 }}</span>
+                    <a :href=" `tel:${data.data.number1}`"> <span>{{ data.data.number1 }}</span> </a>
                 </div>
                 <div class="box">
                     <NuxtImg src="/images/vacancies/Vector1.svg" width="20px"/>
-                    <span>{{ data.data.number2 }}</span>
+                    <a :href=" `tel:${data.data.number2}`"> <span>{{ data.data.number2 }}</span> </a>
                 </div>
                 <div class="box">
                     <NuxtImg src="/images/vacancies/fax.svg" width="20px"/>
-                    <span>{{ data.data.fax }}</span>
+                    <a :href=" `tel:${data.data.fax}`"><span>{{ data.data.fax }}</span> </a>
                 </div>
             </div>
 
@@ -27,7 +27,7 @@
                 <Tag> {{ $t('contacts-email') }}</Tag>
                 <div class="box">
                     <NuxtImg src="/images/vacancies/Vector.svg" width="23px"/>
-                    <span> {{ data.data.email }}</span>
+                    <a :href=" `mailto:${data.data.email}`"><span> {{ data.data.email }}</span>  </a>
                 </div>
             </div>
         </div>
@@ -94,15 +94,23 @@
 
 .box {
         display: inline-block;
+        font-size: 0.9rem;
         border-radius: 10px;
         padding: 10px 20px;
         background-color: var(--grey-light);
-        border: 2px solid var(--grey-middle);
+        border: 1px solid var(--grey-middle);
+
+        transition: all 0.2s;
 
         img {
             margin-right: 10px;
         }
     }
+
+    .box:hover {
+    background-color: #e8e8e8;
+    transform: scale(1.02);
+}
 
     .form-container {
   margin: 60px auto;
