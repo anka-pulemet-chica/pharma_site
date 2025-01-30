@@ -2,7 +2,7 @@
   <NuxtLink :to="$localePath('partners')"><AppLink>{{ $t('back') }}</AppLink></NuxtLink>
     <div class="rows">
       <div class="left_part">
-        <!-- <Tag>{{ $t('partners-tag') }}</Tag> -->
+        <Tag>{{ $t('partners-tag') }}</Tag>
         <PhoneAndEmail />
         
 
@@ -11,7 +11,7 @@
       
       <div class="right_part">
         <h1>{{ data.data.name }}</h1>
-        <p class="tag" >{{ data.data.tag }}</p>
+        <!-- <p class="tag" >{{ data.data.tag }}</p> -->
         <div class="wrapping">
           <img :src="`${$config.public.StrapiUrl}${data.data.icon.url}`" :alt="data.data.name" />
         </div>
