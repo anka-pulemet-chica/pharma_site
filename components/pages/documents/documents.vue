@@ -9,8 +9,7 @@
                 <div class="docs">
                 <div class="doc">
                     <NuxtImg src="/images/documents/shield.svg"/>
-
-                    <a href="/docs/ethics.txt" download>
+                    <a href="/docs/svidedelstvo.pdf" download>
                         <div class="desc">
                         <h5>Свидетельство</h5>
                         <p>о государственной регистрации</p>
@@ -32,43 +31,52 @@
                 </div>
 
                 <div class="doc">
-                    <NuxtImg src="/images/documents/pill.svg" />
-                    <div class="desc">
-                        <h5>Лицензия</h5>
-                        <p>фармацевтической деятельности</p>
-                        <span class="size">1.8 МБ</span>
-                        <span class="download">  {{$t('downloadPDF')}}</span>
-                    </div>
+                        <NuxtImg src="/images/documents/pill.svg" />
+                        <a href="/docs/licenziya.pdf" download> 
+                            <div class="desc">
+
+                            <h5>Лицензия</h5>
+                            <p>фармацевтической деятельности</p>
+                            <span class="size">1.8 МБ</span>
+                            <span class="download">  {{$t('downloadPDF')}}</span>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="doc">
                     <NuxtImg src="/images/documents/DNA.svg" />
+                    
                     <div class="desc">
                         <h5>Кодекс</h5>
                         <p>стандарты поведения</p>
                         <span class="size">1.5 МБ</span>
                         <span class="download">  {{$t('downloadPDF')}}</span>
                     </div>
+                  
                 </div>
 
                 <div class="doc">
                     <NuxtImg src="/images/documents/note.svg"  />
+                    <a href="/docs/ap.pdf" download> 
                     <div class="desc">
-                        <h5>Устав</h5>
-                        <p>стандарты поведения</p>
+                        <h5>Политика компании</h5>
+                        <p>антикоррупционная политика</p>
                         <span class="size">2 МБ</span>
                         <span class="download">  {{$t('downloadPDF')}}</span>
                     </div>
+                </a>
                 </div>
 
                 <div class="doc">
                     <NuxtImg src="/images/documents/case.svg"  />
+                    <a href="/docs/eticheskij_kodeks.pdf" download>
                     <div class="desc">
-                        <h5>Кодекс</h5>
-                        <p>стандарты поведения</p>
+                        <h5>Этика компании</h5>
+                        <p>Этический кодекс</p>
                         <span class="size">1 МБ</span>
                         <span class="download">  {{$t('downloadPDF')}}</span>
                     </div>
+                    </a>
                 </div>
             </div>
         </div>
