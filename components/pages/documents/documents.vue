@@ -5,17 +5,19 @@
             </div>
             <div class="right_part">
                 <h3>{{$t('home-docs-tag')}}</h3>
-                <p> {{ docs }}</p>
                 
                 <div class="docs">
                 <div class="doc">
                     <NuxtImg src="/images/documents/shield.svg"/>
-                    <div class="desc">
+
+                    <a href="/docs/ethics.txt" download>
+                        <div class="desc">
                         <h5>Свидетельство</h5>
                         <p>о государственной регистрации</p>
                         <span class="size">3.87 МБ</span>
                         <span class="download">  {{$t('downloadPDF')}}</span>
                     </div>
+                    </a>
                 </div>
 
                 <div class="doc">
@@ -153,13 +155,3 @@
 
 }
 </style>
-
-
-<script>
-export default {
-  props: {
-    docs: String
-
-  }
-};
-</script>

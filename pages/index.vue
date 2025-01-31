@@ -1,6 +1,6 @@
 <template>
         <PagesIndexHerosection :description="data.data.herosection_description"/>
-        <PagesIndexPartners :source_gallery="data.data.partners_images"/>
+        <PagesIndexPartners :source_gallery="dataPartners.data.slice(0,6)"/>
         <PagesIndexAbout :about="data.data.about"/>
         <PagesIndexAdvantages :list="extractText(data.data.advantages)" :img1="`${$config.public.StrapiUrl}${data.data.advantages_image_1.url}`" :img2="`${$config.public.StrapiUrl}${data.data.advantages_image_2.url}`" :logistics="extractText(data.data.advantages_logistics)"/>
         <PagesIndexMission :slogan="data.data.mission_slogan" :slogan_description="data.data.mission_slogan_description" :list_title="data.data.mission_list_title" :list="extractText(data.data.mission_list)" :img1="`${$config.public.StrapiUrl}${data.data.mission_image_1.url}`"/>
@@ -28,11 +28,14 @@ const { fetchData } = useStrapiService()
 const { locale } = useI18n()
 
 let data = ref()
+let dataPartners = ref()
 const localeKey = computed(() => locale.value);
 
 let loadData = async () => {
 data = null
+dataPartners = null
   data = await fetchData('home-page', locale.value);
+  dataPartners = await fetchData('partners', locale.value);
 }
 
 // Загружаем данные при загрузке компонента

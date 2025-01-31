@@ -4,7 +4,10 @@
     <p> {{ $t('partners-heading') }} </p>
     <div class="partners">
         <div v-for="(item, index) in source_gallery" :key="index">
-            <NuxtImg :src="`${$config.public.StrapiUrl}${item.url}`" />
+            <NuxtLink :to="$localePath(`/partners/${item.documentId}`)">
+                <NuxtImg :src="`${$config.public.StrapiUrl}${item.icon.url}`" :alt="item.name"/>
+            </NuxtLink>
+            
         </div>
     </div>
 </section>
@@ -16,9 +19,7 @@
 section {
     margin: var(--outer-indent-big) 0;
     display: flex;
-    flex-direction: column;
-
-   
+    flex-direction: column; 
 
     p {
         padding-bottom: var(--outer-indent-small);

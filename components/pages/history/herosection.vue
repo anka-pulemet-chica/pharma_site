@@ -55,11 +55,58 @@ watch(locale, async () => {
             border-radius: 50px;
             img {
                 position: relative;
-                top: -200px;
+                top: -30vh;
                 width: 100%;
                 z-index: -1;
 
             }
         }
-  
+@media (min-width: 1985px) {
+.wrap_img {
+    height: 400px;
+    img {
+        top: -30vh;
+    }
+}
+}
+
+@media (max-width: 1985px) {
+        .wrap_img {
+            height: 300px;
+            img {
+                top: -200px;
+            }
+        }
+}
+
+
+@media (max-width: 1289px) {
+        .wrap_img {
+            height: 300px;
+            img {
+                top: -10vh;
+            }
+        }
+}
+
+
+    @media (max-width: 768px) {
+        .wrap_img {
+            height: 200px;
+            img {
+                top: -100px;
+            }
+        }
+}
+
+@media (max-width: 480px) {
+        .wrap_img {
+            height: 150px;
+            img {
+                top: -20px;
+            }
+        }
+}
+
+
 </style>
