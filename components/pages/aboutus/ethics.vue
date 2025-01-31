@@ -5,11 +5,13 @@
 
                 <div class="doc">
                     <NuxtImg src="/images/documents/DNA.svg" width="50" />
+                    <a href="/docs/eticheskij_kodeks.pdf" download>
                     <div class="desc">
                         <p>Этический кодекс</p>
                         <span class="size">1.5 МБ</span>
                         <span class="download"> Скачать PDF</span>
                     </div>
+                </a>
                 </div>
             </div>
             <article class="right_part">
