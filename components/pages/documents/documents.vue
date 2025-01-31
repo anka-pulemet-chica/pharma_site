@@ -7,32 +7,34 @@
                 <h3>{{$t('home-docs-tag')}}</h3>
                 
                 <div class="docs">
-                <div class="doc">
-                    <NuxtImg src="/images/documents/shield.svg"/>
-                    <a href="/docs/svidedelstvo.pdf" download>
-                        <div class="desc">
-                        <h5>Свидетельство</h5>
-                        <p>о государственной регистрации</p>
-                        <span class="size">3.87 МБ</span>
-                        <span class="download">  {{$t('downloadPDF')}}</span>
+                    <div class="doc">
+                        <NuxtImg src="/images/documents/shield.svg"/>
+                        <a href="/docs/svidedelstvo.pdf" download>
+                            <div class="desc">
+                            <h5>Свидетельство</h5>
+                            <p>о государственной регистрации</p>
+                            <span class="size">3.87 МБ</span>
+                            <span class="download">  {{$t('downloadPDF')}}</span>
+                        </div>
+                        </a>
                     </div>
-                    </a>
-                </div>
 
                 <div class="doc">
                     <NuxtImg src="/images/documents/man.svg" />
+                    <a href="/docs/GDP.pdf" download>
                     <div class="desc">
-                        <h5>GDP</h5>
+                        <h5>ГДП</h5>
                         <p>надлежащая практика дистрибьюции</p>
                         <span class="size">3.3 МБ</span>
                         <span class="download">  {{$t('downloadPDF')}}</span>
                     </div>
+                </a>
                     
                 </div>
 
                 <div class="doc">
                         <NuxtImg src="/images/documents/pill.svg" />
-                        <a href="/docs/licenziya.pdf" download> 
+                        <a href="/docs/licence.pdf" download> 
                             <div class="desc">
 
                             <h5>Лицензия</h5>
