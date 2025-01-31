@@ -269,6 +269,7 @@
 
         .mobile-only {
             display:block;
+            z-index: 100;
 
             .menu-toggle {
                 position: relative;
