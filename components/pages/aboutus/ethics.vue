@@ -5,7 +5,7 @@
 
                 <div class="doc">
                     <NuxtImg src="/images/documents/DNA.svg" width="50" />
-                    <a href="/docs/eticheskij_kodeks.pdf" download>
+                    <a href="/docs/Кодекс корпаративной этики_2025.pdf" download>
                     <div class="desc">
                         <p>Этический кодекс</p>
                         <span class="size">1.5 МБ</span>

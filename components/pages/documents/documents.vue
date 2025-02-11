@@ -45,7 +45,7 @@
                     </a>
                 </div>
 
-                <div class="doc">
+                <!-- <div class="doc">
                     <NuxtImg src="/images/documents/DNA.svg" />
                     
                     <div class="desc">
@@ -55,11 +55,11 @@
                         <span class="download">  {{$t('downloadPDF')}}</span>
                     </div>
                   
-                </div>
+                </div> -->
 
                 <div class="doc">
                     <NuxtImg src="/images/documents/note.svg"  />
-                    <a href="/docs/ap.pdf" download> 
+                    <a href="/docs/docs/Антикоррупционная политика_2025.pdf" download> 
                     <div class="desc">
                         <h5>Политика компании</h5>
                         <p>антикоррупционная политика</p>
@@ -71,7 +71,7 @@
 
                 <div class="doc">
                     <NuxtImg src="/images/documents/case.svg"  />
-                    <a href="/docs/eticheskij_kodeks.pdf" download>
+                    <a href="/docs/Кодекс корпаративной этики_2025.pdf" download>
                     <div class="desc">
                         <h5>Этика компании</h5>
                         <p>Этический кодекс</p>
