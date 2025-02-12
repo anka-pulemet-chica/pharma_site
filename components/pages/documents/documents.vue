@@ -19,6 +19,10 @@
                         </a>
                     </div>
 
+                <div class="tree">
+                    <NuxtImg src="/images/layouts/logo.svg"/>
+                </div>
+
                 <div class="doc">
                     <NuxtImg src="/images/documents/man.svg" />
                     <a href="/docs/GDP.pdf" download>
@@ -58,18 +62,6 @@
                 </div> -->
 
                 <div class="doc">
-                    <NuxtImg src="/images/documents/note.svg"  />
-                    <a href="/docs/docs/Антикоррупционная политика_2025.pdf" download> 
-                    <div class="desc">
-                        <h5>Политика компании</h5>
-                        <p>антикоррупционная политика</p>
-                        <span class="size">2 МБ</span>
-                        <span class="download">  {{$t('downloadPDF')}}</span>
-                    </div>
-                </a>
-                </div>
-
-                <div class="doc">
                     <NuxtImg src="/images/documents/case.svg"  />
                     <a href="/docs/Кодекс корпаративной этики_2025.pdf" download>
                     <div class="desc">
@@ -79,6 +71,18 @@
                         <span class="download">  {{$t('downloadPDF')}}</span>
                     </div>
                     </a>
+                </div>
+
+                <div class="doc">
+                    <NuxtImg src="/images/documents/note.svg"  />
+                    <a href="/docs/docs/Антикоррупционная политика_2025.pdf" download> 
+                    <div class="desc">
+                        <h5>Политика компании</h5>
+                        <p>антикоррупционная политика</p>
+                        <span class="size">2 МБ</span>
+                        <span class="download">  {{$t('downloadPDF')}}</span>
+                    </div>
+                </a>
                 </div>
             </div>
         </div>
@@ -93,6 +97,20 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
+
+                .tree {
+                    width: 30%;
+                    align-self: stretch;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+
+                    img {
+                        max-height: 150px;
+                        opacity: 0.8;
+                    }
+                }
 
                 .doc {
                     width: 30%;
@@ -138,7 +156,7 @@
             .docs {
                 .doc {
                     flex-direction: column;
-                    justify-content: flex-end;
+                    justify-content: stretch;
                 }
             }
         }
@@ -149,6 +167,10 @@
 
 .rows {
     .docs {
+        .tree {
+            display: none;
+
+        }
         .doc {
             width: 50%;
             justify-content: flex-start;
@@ -159,6 +181,17 @@
             }
             font-size: 0.8rem;
                    }
+        }
+
+        .doc:last-child {
+            width: 100%;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 20%;
+
+            img {
+                align-self: flex-start;
+            }
         }
     }
 }
