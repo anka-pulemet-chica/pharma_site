@@ -1,7 +1,7 @@
 <template>
    <div class="items">
         <div v-for="item in data.data" :key="item" class="item">
-            <div class="nums"> {{ item.number }} <span class="nums_desc">{{ item.number_desc }}</span></div>
+            <!-- <div class="nums"> {{ item.number }} <span class="nums_desc">{{ item.number_desc }}</span></div> -->
             <div class="name">{{ item.name }}</div>
             <div class="desc"> {{ item.description }}</div>
         </div>
@@ -46,17 +46,19 @@ watch(locale, async () => {
         border: 1px solid var(--grey-middle);
         border-radius: 20px;
 
-        padding: 30px 20px; 
+        padding: 40px; 
 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
+        transition: all 0.2s ease-out;
+
 
         .nums {
             padding-bottom: 20px;
             margin-bottom: 40px;
-            border-bottom: 1px solid var(--grey-middle);
+            border-bottom: 1px solid var(--black);
             font-size: 2.5rem;
             font-weight: 200;
 
@@ -67,18 +69,27 @@ watch(locale, async () => {
         }
 
         .name {
+            text-align: center;
             text-transform: uppercase;
             font-weight: 600;
             font-size: 1.5rem;
         }
 
         .desc {
-            padding-top: 60px;
+            text-align: center;
+            padding-top: 20px;
             font-weight: 400;
         }
 
 
     }
+
+    .item:hover {
+        transform: scale(1.05);
+        background-color: #d1d1d1;
+        color: white;
+    }
+
 
 }
 
