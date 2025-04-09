@@ -9,7 +9,7 @@
                     <div class="desc">
                         <p>Этический кодекс</p>
                         <span class="size">1.5 МБ</span>
-                        <span class="download"> Скачать PDF</span>
+                        <span class="download"> {{$t('downloadPDF')}}</span>
                     </div>
                 </a>
                 </div>
@@ -51,7 +51,7 @@
 export default {
   props: {
    
-    list: Array,
+    list: String,
     title: String
   }
 };

@@ -1,31 +1,31 @@
 {
   "company": "公司",
-  "advantages": "優點",
-  "history": "歷史",
-  "aboutus": "關於我們",
+  "advantages": "优势",
+  "history": "发展史",
+  "aboutus": "公司简介",
   "partners": "對於合作夥伴",
   "clients": "為客戶",
-  "vacancies": "職位空缺",
-  "contacts": "聯絡方式",
+  "vacancies": "职位空缺",
+  "contacts": "联系方式",
 
 
-  "home-link": "了解更多",
-  "downloadPDF": "下載 PDF",
-  "contactUs": "聯絡我們",
+  "home-link": "了解更多信息",
+  "downloadPDF": "下载 PDF",
+  "contactUs": "联系我们",
   
 
-  "home-about-tag": "關於公司",
+  "home-about-tag": "公司简介",
 
-  "home-mission-tag": "任務",
-  "home-ethics-tag": "道德",
-  "home-politics-tag": "政治",
-  "home-politics-title": "反貪腐政策",
+  "home-mission-tag": "企业使命",
+  "home-ethics-tag": "商业道德",
+  "home-politics-tag": "政策",
+  "home-politics-title": "反腐败政策",
 
-  "home-docs-tag": "文檔",
-  "home-logistics-tag": "物流",
+  "home-docs-tag": "文书",
+  "home-logistics-tag": "物流系统",
 
-  "vacancies-contacts-dep": "人力資源聯絡人",
-  "vacancies-position": "未平倉頭寸",
+  "vacancies-contacts-dep": "人力资源部联系方式",
+  "vacancies-position": "职位空缺",
 
   "vacancies-resp": "主要職責",
   "vacancies-req": "要求",
@@ -37,26 +37,26 @@
 
 
 
-  "partners-heading":"與領先公司的合作協議",
+  "partners-heading":"与领先公司的合作协定",
   "partners-result": "殘留物",
 
   "clients-heading":"客戶",
   "clients-tag": "您想成為客戶嗎？",
-  "partners-tag": "您想成為合作夥伴嗎？",
+  "partners-tag": "是否想要成为我们的合作伙伴？",
 
   "back": "後退",
-  "directions": "路線",
+  "directions": "通路图",
 
 
-  "contacts-office": "辦公室",
-  "contacts-tel": "電話/傳真",
+  "contacts-office": "办公室",
+  "contacts-tel": "电话/传真：",
   "聯絡人-電子郵件": "電子郵件",
-  "contacts-text-us": "寫信給我們",
+  "contacts-text-us": "联系我们",
 
-  "form-name": "名稱",
-  "form-phone": "電話",
-  "form-email": "電子郵件",
-  "form-message": "您對什麼服務/產品有興趣",
+  "form-name": "姓名",
+  "form-phone": "电话",
+  "form-email": "Email",
+  "form-message": "请填写您所需的服务类",
 
   "error-heading":"抱歉，找不到该页面",
   "error-status":"错误状态为",

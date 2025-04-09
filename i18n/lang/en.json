@@ -5,17 +5,16 @@
       "aboutus": "About us",
       "partners": "For partners",
       "clients": "For clients",
-      "vacancies": "Vacancies",
+      "vacancies": "Careers",
       "contacts": "Contacts",
 
 
-
-      "home-link": "Find out more",
+      "home-link": "Learn more",
       "downloadPDF": "Download PDF",
       "contactUs": "Contact us",
       
 
-      "home-about-tag": "About company",
+      "home-about-tag": "About us",
 
       "home-mission-tag": "Mission",
       "home-ethics-tag": "Ethics",
@@ -27,7 +26,7 @@
 
 
 
-      "vacancies-contacts-dep": "HR Department Contacts",
+      "vacancies-contacts-dep": "HR Department",
       "vacancies-position": "Open positions",
 
       "vacancies-resp": "Main responsibilities",
@@ -38,28 +37,28 @@
       "vacancies-link": "more details on hh.ru",
       "vacancies-no" : "There are currently no vacancies available.",
 
-      "partners-heading":"Partnership agreements with leading companies",
+      "partners-heading":"Partnership deals with leading companies",
       "partners-result": "Results",
 
       "clients-heading":"Clients",
       "clients-tag": "Want to become a client?",
-      "partners-tag": "Want to become a partner?",
+      "partners-tag": "Do you want to become our partner?",
 
 
       "contacts-office": "Office",
-      "contacts-tel": "Ph.number/fax",
+      "contacts-tel": "Tel. / Fax",
       "contacts-email": "Email",
-      "contacts-text-us": "Write to us",
-      "directions": "Directions",
+      "contacts-text-us": "Contact us",
+      "directions": "How to find us",
 
       "back": "Back",
       
 
 
       "form-name": "Name",
-      "form-phone": "Phone",
+      "form-phone": "Telephone",
       "form-email": "Email",
-      "form-message": "What service/product are you interested in",
+      "form-message": "Which service are you interested in?",
 
 
       "error-heading": "Sorry, this page is not found",

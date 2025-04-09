@@ -52,7 +52,7 @@
                 </div>
 
                 <button class="link green"  @click="toggleSection('location')"><NuxtImg src="/images/layouts/location.svg" /></button>
-                <div :class="{ 'is-active': activeSection === 'location', 'is-not-active': activeSection !== 'location' }">
+                <div v-if="address && phones" :class="{ 'is-active': activeSection === 'location', 'is-not-active': activeSection !== 'location' }">
         
                        <Location :address="address" v-model="activeSection" :phones="phones" style="z-index: 1;"/>
                     </div>
@@ -383,8 +383,9 @@ export default {
     toggleDropdown() {
       this.isDropdownOpen = !this.isDropdownOpen;
     },
-    switchLocale(locale) {
-        this.$i18n.setLocale(locale);
+    async switchLocale(locale) {
+
+        await this.$i18n.setLocale(locale);
         if (this.isMenuActive) {
             this.toggleMenu()
         }
@@ -393,13 +394,13 @@ export default {
       this.isMenuActive = !this.isMenuActive;
     },
     toggleSection (section) {
-        this.activeSection = this.activeSection === section ? null : section;
+        this.activeSection = this.activeSection === section ? none : section;
     }
 },
 
     computed: {
       availableLocales() {
-        return this.$i18n.locales.map((locale) => locale.code);
+        return this.$i18n.locales.value.map((locale) => locale.code);
       },
       currentLocale() {
         return this.$i18n.locale;
