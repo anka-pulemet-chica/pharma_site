@@ -1,7 +1,7 @@
 <template>
 
     <div class="blocks">
-        <div class="inner" :style="innerStyle">
+        <div class="inner">
         <div v-for="(item,index) in sortedData" :key="index" class="block" :class="{ 'slide-out-left': item.isSlidingOut, 'slide-out-right': item.isSlidingOutRight }"
                 @scroll.passive="handleScroll">
            <div class="year" >{{ item.year }}</div> 

@@ -4,14 +4,14 @@
         <nav class="nav desktop">
             <div v-for="(item, index) in items" :key="index">
                 <div v-if="item.items" @click.prevent="toggleDropdown">
-                    <div @mouseleave="toggleSection(none)" @mouseenter="toggleSection('dropdown')">
+                    <div @mouseleave="toggleSection(null)" @mouseenter="toggleSection('dropdown')">
                         <NuxtLink :to="$localePath(item.path)"> {{ $t(item.title) }}
                             <img src="/images/components/down.svg" class="dropdown-arrow" :class="{ open:  activeSection == 'dropdown' }">
                          </NuxtLink>
                         
                     </div>
 
-                    <div class="dropdown" @mouseleave="toggleSection(none)" @mouseenter="toggleSection('dropdown')">
+                    <div class="dropdown" @mouseleave="toggleSection(null)" @mouseenter="toggleSection('dropdown')">
                         <div v-if="activeSection == 'dropdown' " v-for="(subitem, index) in item.items" :key="index">
                             <NuxtLink :to="$localePath(subitem.path)" activeClass="activenav">{{ $t(subitem.title )}} </NuxtLink>
                         </div>                    </div>
@@ -29,7 +29,7 @@
                         <Phones />
                     </div> -->
 
-                <div class="language-switcher" @mouseleave="toggleSection(none)" @mouseenter="toggleSection('lang')">
+                <div class="language-switcher" @mouseleave="toggleSection(null)" @mouseenter="toggleSection('lang')">
                     <button class="active link"> {{ currentLocale.toUpperCase() }} </button>
                     <div class="other-locales" v-if="activeSection === 'lang'">
                         <div v-for="locale in availableLocales">
@@ -394,7 +394,7 @@ export default {
       this.isMenuActive = !this.isMenuActive;
     },
     toggleSection (section) {
-        this.activeSection = this.activeSection === section ? none : section;
+        this.activeSection = this.activeSection === section ? null : section;
     }
 },
 
