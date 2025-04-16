@@ -28,8 +28,8 @@
                     <div :class="{ 'is-active': activeSection === 'phone', 'is-not-active': activeSection !== 'phone' }">
                         <Phones />
                     </div> -->
-
-                <div class="language-switcher" @mouseleave="toggleSection(null)" @mouseenter="toggleSection('lang')">
+<!-- 
+                    <div class="language-switcher" @mouseleave="toggleSection(null)" @mouseenter="toggleSection('lang')">
                     <button class="active link"> {{ currentLocale.toUpperCase() }} </button>
                     <div class="other-locales" v-if="activeSection === 'lang'">
                         <div v-for="locale in availableLocales">
@@ -46,10 +46,26 @@
                     <span v-else>
                         {{ locale.toUpperCase() }}
                     </span>
+                    <span>{{ locale.toUpperCase() }}</span>
                     </button>
                 </div>
                     </div> 
-                </div>
+                </div> -->
+
+                <div class="language-switcher" @mouseleave="toggleSection(null)" @mouseenter="toggleSection('lang')">
+                    <button class="active link"> {{ (currentLocaleNew.name).toUpperCase() }} </button>
+
+                    <div class="other-locales" v-if="activeSection === 'lang'">
+                        <div v-for="locale in availableLocalesNew">
+                            <button :key="locale.code" @click.prevent.stop="switchLocale(locale.code)" class="link white">
+                                {{ locale.name.toUpperCase() }}
+                            </button>
+                        </div>
+
+                    </div>
+                </div> 
+
+                
 
                 <button class="link green"  @click="toggleSection('location')"><NuxtImg src="/images/layouts/location.svg" /></button>
                 <div v-if="address && phones" :class="{ 'is-active': activeSection === 'location', 'is-not-active': activeSection !== 'location' }">
@@ -380,9 +396,11 @@ export default {
         }
     },
     methods: {
+
     toggleDropdown() {
       this.isDropdownOpen = !this.isDropdownOpen;
     },
+
     async switchLocale(locale) {
 
         await this.$i18n.setLocale(locale);
@@ -390,9 +408,11 @@ export default {
             this.toggleMenu()
         }
       },
+
     toggleMenu() {
       this.isMenuActive = !this.isMenuActive;
     },
+    
     toggleSection (section) {
         this.activeSection = this.activeSection === section ? null : section;
     }
@@ -402,9 +422,22 @@ export default {
       availableLocales() {
         return this.$i18n.locales.value.map((locale) => locale.code);
       },
-      currentLocale() {
-        return this.$i18n.locale;
+
+      availableLocalesNew() {
+        return this.$i18n.locales.value.filter(i => i.code != this.$i18n.locale)
       },
+
+      currentLocale() {
+        let curLocale = this.$i18n.locale;
+        // if (curLocale == 'zh')
+        //     return 'ch';
+        return curLocale;
+      },
+
+      currentLocaleNew() {
+        let curLocale = this.$i18n.locales.value.filter(i => i.code == this.$i18n.locale)
+        return curLocale[0]
+      }
     }
 }
 

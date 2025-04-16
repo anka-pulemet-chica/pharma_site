@@ -79,7 +79,7 @@ let dataContacts = ref(null);
 // }
 
 let loadDataFooter = async () => {
-dataInfo.value = await fetchData('footer', locale.value)
+    dataInfo.value = await fetchData('footer', locale.value)
 }
 
 let loadDataContacts = async () => {

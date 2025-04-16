@@ -30,22 +30,22 @@ export default defineNuxtConfig({
     },
     locales: [
       {
-        name: 'Russian',
+        name: 'Ru',
         code: 'ru',
         language: 'ru',
         file: 'ru.json'
       },
       {
-        name: 'English',
+        name: 'En',
         code: 'en',
         language: 'en',
         file: 'en.json'
       },
       
       {
-        name: 'Chinese',
+        name: 'Ch',
         code: 'zh',
-        language: 'zh',
+        language: 'zh-CN',
         file: 'zh.json'
       }
     ],
