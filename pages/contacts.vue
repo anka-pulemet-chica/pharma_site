@@ -149,7 +149,7 @@ button {
   background-color: white;
   border-radius: 5px;
   font-size: 1rem;
-  transition: border 0.2s;
+  /* transition: border 0.1s; */
 
 }
 
@@ -157,17 +157,18 @@ input::placeholder, textarea::placeholder {
     color: black;
     font-size: 0.9rem;
     font-weight: 400;
-    transition: font-size 0.3s;
+    /* transition: font-size 0.1s; */
 }
 
 input:focus, textarea:focus {
   border: 2px solid var(--black);
+  outline: none;
 }
 
 
 input:focus::placeholder, textarea:focus::placeholder {
   color: var(--grey);
-  font-size: 0.8rem;
+  /* font-size: 0.8rem; */
 }
 
 

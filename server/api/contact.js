@@ -10,6 +10,17 @@ const transporter = nodemailer.createTransport({
     },
   });
 
+  // const transporter = nodemailer.createTransport({
+  //   host: 'exby.atservers.net',
+  //   port: 587, // или 587 — можно протестировать оба
+  //   secure: false, // true для порта 465 (SSL), false для 587 (STARTTLS)
+  //   auth: {
+  //     user: 'site@pharma-mg.by',
+  //     pass: 'тWu40B3u_5N',
+  //   },
+  // });
+  
+
   export default defineEventHandler(async (event) => {
     const body = await readBody(event);
   
@@ -22,8 +33,8 @@ const transporter = nodemailer.createTransport({
   
     try {
       await transporter.sendMail({
-        from: '"Your Website" <kubak.kavy@gmail.coma>', 
-        to: 'anna.kavaliov@gmail.com',                    
+        from: 'Your Website', 
+        to: 'info@pharma-mg.by',                    
         subject: `New Contact Form Submission from ${body.name}`, 
         text: `
           Name: ${body.name}
