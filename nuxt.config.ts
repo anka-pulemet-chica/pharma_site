@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       // StrapiUrl: 'http://strapi.phmg.by',
-      StrapiUrl: 'https://strapi.phmg.by',
+      StrapiUrl: 'https://strapi.pharma-mg.by',
       // StrapiUrl: 'http://localhost:1337'
     }
   },
